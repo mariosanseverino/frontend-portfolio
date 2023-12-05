@@ -1,13 +1,22 @@
 import React from 'react';
 
 export default function Menu() {
-	const menuOptions = ['Home', 'About', 'Stack', 'Projects', 'Contact'];
+	const menuOptions = ['About', 'Stack', 'Projects'];
 	
 	return (
-		<menu className='flex flex-row'>
-			{ menuOptions.map((option, index) => (
-				<li key={ index } className='mx-2'>{ option }</li>
-			)) }
-		</menu>
+		<>
+			{/* Mobile version */}
+			<menu className='flex-row hidden lg:flex'>
+				{ menuOptions.map((option, index) => (
+					<li key={ index } className='mr-2'>{ option }</li>
+				)) }
+			</menu>
+
+			{/* Desktop and tablet version */}
+			<menu className='lg:hidden'>
+				aquele menuzinho
+			</menu>
+		
+		</>
 	);
 }

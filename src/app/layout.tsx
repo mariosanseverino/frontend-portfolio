@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/Header';
+import NavBar from './components/NavBar';
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children,
 }: {
-  children: React.ReactNode
+	children: React.ReactNode
 }) {
 	return (
 		<html lang="en">
-			<body className='bg-black'>
-				<Header />
+			<body className='bg-black w-full flex flex-col'>
+				<NavBar />
 				{children}
 			</body>
 		</html>
