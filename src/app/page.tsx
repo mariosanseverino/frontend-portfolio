@@ -3,7 +3,7 @@ import SwiperWrapper from './components/SwiperWrapper';
 
 export default function Home() {
 	return (
-		<main className={ 'h-full px-4' }>
+		<main className={ 'h-full' }>
 			<SwiperWrapper />
 		</main>
 	);
