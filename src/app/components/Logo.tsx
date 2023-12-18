@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Logo() {
 	return (
-		<p>Logo</p>
+		<p className='lg:order-1'>Logo</p>
 	);
 }

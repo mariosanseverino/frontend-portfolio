@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html {
+  position: relative;
   color: white;
 }
 
@@ -20,10 +21,22 @@ h2 {
 
 h3 {
   font-size: 1.17em;
-  margin-top: 1em;
   margin-bottom: 1em;
 }
 
 h1, h2, h3 {
   font-weight: bold;
+}
+
+.swiper-slide {
+  height: 100vh;
+  padding-top: 4rem;
+}
+
+#slide-1 {
+  background-color: blue;
+}
+
+#slide-2 {
+  background-color: blueviolet;
 }
