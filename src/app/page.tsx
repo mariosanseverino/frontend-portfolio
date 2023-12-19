@@ -1,9 +1,10 @@
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import SwiperWrapper from './components/SwiperWrapper';
+import { useBehaviorContext } from './context/BehaviorContext';
 
 export default function Home() {
-	const [currentSlide, setCurrentSlide] = useState<number>(0);
+	const { currentSlide, setCurrentSlide } = useBehaviorContext();
 	const totalSlides = 3;
 
 	const handleWheel = useCallback(
@@ -25,6 +26,7 @@ export default function Home() {
 
 	const debouncedHandleWheel = useCallback(
 		(event: WheelEvent) => {
+			// Checks and prevents fast scrolling
 			if (!isScrolling) {
 				isScrolling = true;
 
@@ -32,7 +34,7 @@ export default function Home() {
 
 				setTimeout(() => {
 					isScrolling = false;
-				}, 1000); // Adjust the timeout as needed
+				}, 1000);
 			}
 		}, [handleWheel]
 	);
