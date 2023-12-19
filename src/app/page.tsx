@@ -4,7 +4,7 @@ import SwiperWrapper from './components/SwiperWrapper';
 
 export default function Home() {
 	const [currentSlide, setCurrentSlide] = useState<number>(0);
-	const totalSlides = 2;
+	const totalSlides = 3;
 
 	const handleWheel = useCallback(
 		(event: WheelEvent) => {
@@ -21,8 +21,7 @@ export default function Home() {
 				return prevSlide;
 			});
 		},
-		[totalSlides]
-	);
+		[totalSlides]);
 
 	useEffect(() => {
 		// Add the mouse wheel scroll event listener when the component is mounted
