@@ -1,4 +1,5 @@
 import React from 'react';
+import BehaviorProvider from './context/BehaviorContext';
 import NavBar from './components/NavBar';
 import type { Metadata } from 'next';
 import './globals.css';
@@ -14,10 +15,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className='bg-black w-full flex flex-col'>
-				<NavBar />
-				{children}
-			</body>
+			<BehaviorProvider>
+				<body className='bg-black w-full flex flex-col'>
+					<NavBar />
+					{children}
+				</body>
+			</BehaviorProvider>
 		</html>
 	);
 }

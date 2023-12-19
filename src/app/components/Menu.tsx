@@ -10,7 +10,7 @@ export default function Menu() {
 	return (
 		<>
 			{/* Mobile version */}
-			<menu className='flex-row hidden px-2 border lg:flex lg:order-2 lg:gap-2'>
+			<menu className='flex-row hidden px-2 lg:flex lg:order-2 lg:gap-8'>
 				{ menuOptions.map((option, index) => (
 					<li key={ index }>{ option.title }</li>
 				)) }

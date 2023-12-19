@@ -7,7 +7,6 @@ import React, {
 	SetStateAction
 } from 'react';
 import { ThemeProvider } from 'next-themes';
-import { Props } from '../components/ThemeSwitcher';
 
 export type BehaviorPropsTypes = {
 	currentSlide: number,
@@ -18,16 +17,20 @@ export const BehaviorContext = createContext({
 	currentSlide: 0,
 } as BehaviorPropsTypes);
 
-export default function BehaviorProvider({ children } : Props) {
+interface BehaviorProviderProps {
+	children: React.ReactNode
+}
+
+export default function BehaviorProvider({ children }: BehaviorProviderProps) {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	
-	const behaviorProviderSettings = {
+	const contextValue = {
 		currentSlide,
 		setCurrentSlide
 	};
 	
 	return (
-		<BehaviorContext.Provider value={ behaviorProviderSettings }>
+		<BehaviorContext.Provider value={ contextValue }>
 			<ThemeProvider themes={['dark', 'light']} attribute='class'>
 				{ children }
 			</ThemeProvider>

@@ -3,13 +3,20 @@ import ProfilePicture from './ProfilePicture';
 
 export default function Slide1() {
 	return (
-		<div className='swiper-slide bg-white text-lightblue text-center flex flex-col justify-center border' id='slide-1'>
+		<section className='swiper-slide bg-white text-indigo-400 flex flex-col text-center md:text-left md:flex-row items-center justify-center px-4' id='slide-1'>
 			{/* Content for slide 1 */}
-			<h2>Hello, World!</h2>
-			<p className='mb-6'>Welcome to my portfolio. My name is</p>
 			<ProfilePicture />
-			<h1 className='text-black'> Mario Sanseverino</h1>
-			<h3 className='text-gray-800'>Front-end Developer and UX Designer</h3>
-		</div>
+			<div>
+				<p>Hello, World! My name is</p>
+				<h1 className='text-lightblue'>Mario Sanseverino</h1>
+				<h3>Front-end Developer</h3>
+				<picture
+					className='flex flex-row gap-1 justify-center items-center mx-auto md:justify-start'
+				>
+					<img src='/icons/pin-lightblue.png' />
+					<span>Porto Alegre, BRA</span>
+				</picture>
+			</div>
+		</section>
 	);
 }
