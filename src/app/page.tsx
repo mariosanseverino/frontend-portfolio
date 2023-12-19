@@ -20,18 +20,35 @@ export default function Home() {
 				}
 				return prevSlide;
 			});
-		},
-		[totalSlides]);
+		}, [totalSlides]
+	);
+
+	const debouncedHandleWheel = useCallback(
+		(event: WheelEvent) => {
+			if (!isScrolling) {
+				isScrolling = true;
+
+				handleWheel(event);
+
+				setTimeout(() => {
+					isScrolling = false;
+				}, 1000); // Adjust the timeout as needed
+			}
+		}, [handleWheel]
+	);
+
+	let isScrolling = false;
 
 	useEffect(() => {
 		// Add the mouse wheel scroll event listener when the component is mounted
-		document.addEventListener('wheel', handleWheel);
+		document.addEventListener('wheel', debouncedHandleWheel);
 
 		// Remove the event listener when the component is unmounted
 		return () => {
-			document.removeEventListener('wheel', handleWheel);
+			document.removeEventListener('wheel', debouncedHandleWheel);
 		};
-	}, [currentSlide]);
+	}, [currentSlide]
+	);
 
 	return (
 		<main className={ 'h-full' }>
