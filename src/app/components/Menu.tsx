@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Menu() {
 	const menuOptions = [
+		{ title: 'Home', link: '' },
 		{ title: 'About', link: '' },
-		{ title: 'Stack', link: '' },
 		{ title: 'Projects', link: '' },
 	];
 	
