@@ -53,7 +53,7 @@ export default function Home() {
 	);
 
 	return (
-		<main className={ 'h-full' }>
+		<main className='h-full'>
 			<SwiperWrapper
 				currentSlide={ currentSlide }
 			/>
