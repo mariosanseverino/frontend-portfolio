@@ -5,7 +5,7 @@ export default function Slide2() {
 	const techstack = ['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'C-Sharp'];
 	
 	return (
-		<section className='swiper-slide bg-lightblue text-white flex flex-col gap-12 md:flex-row justify-center items-center text-center relative' id='slide-2'>
+		<section className='swiper-slide bg-white text-lightblue flex flex-col gap-12 md:flex-row justify-center items-center text-center relative' id='slide-2'>
 			{/* Content for slide 2 */}
 			<div className='w-80 md:text-left'>
 				<h2>About me</h2>

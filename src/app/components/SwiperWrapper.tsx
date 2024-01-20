@@ -8,7 +8,7 @@ export default function SwiperWrapper({ currentSlide }: TSwiperWrapperProps) {
 	return (
 		<section id="swiper-container">
 			{ /* Container responsible for rendering all slides and animate them on scroll */ }
-			<section id="swiper-wrapper" style={{ transform: `translateY(-${currentSlide * 100}%)` }}>
+			<section id="swiper-wrapper" className='bg-red-400' style={{ transform: `translateY(-${currentSlide * 100}%)` }}>
 				<Slide1 />
 				<Slide2 />
 				<Slide3 />
