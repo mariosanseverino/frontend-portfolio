@@ -24,7 +24,7 @@ export default function Slide3() {
 	return (
 		<div className='swiper-slide flex flex-col justify-between relative' id='slide-3'>
 			<h1 className='uppercase z-10'>Projects</h1>
-			<div className='absolute inset-0' style={{ background: 'url("/images/cooking.jpg") center/cover no-repeat', opacity: 0.5 }}></div>
+			<div className='absolute inset-0' style={{ background: `url("${projects[projectTitle].backgroundImage}") center/cover no-repeat`, opacity: 0.5 }}></div>
 			<Project
 				title={ projects[projectTitle].title }
 				description={ projects[projectTitle].description }
