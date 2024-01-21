@@ -59,3 +59,10 @@ p {
   line-height: 4rem;
   font-weight: 900;
 }
+
+.project-description {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.9rem;
+  text-align: center;
+}
