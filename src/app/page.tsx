@@ -4,8 +4,9 @@ import SwiperWrapper from './components/SwiperWrapper';
 import { useBehaviorContext } from './context/BehaviorContext';
 
 export default function Home() {
-	const { currentSlide, setCurrentSlide } = useBehaviorContext();
+	const { currentSlide, setCurrentSlide, currentProject, setCurrentProject } = useBehaviorContext();
 	const totalSlides = 3;
+	const totalProjects = 2;
 
 	const handleWheel = useCallback(
 		(event: WheelEvent) => {
@@ -15,14 +16,30 @@ export default function Home() {
 			// Function that updates the state with the new slide index according to the scroll direction
 			setCurrentSlide((prevSlide) => {
 				if (delta > 0) {
+					setCurrentProject((prevProject) => {
+						if (prevSlide === 2) {
+							return Math.min(prevProject + 1, totalProjects - 1);
+						}
+						return prevProject;
+					});
 					return Math.min(prevSlide + 1, totalSlides - 1);
 				} else if (delta < 0) {
-					return Math.max(prevSlide - 1, 0);
+					setCurrentProject((prevProject) => {
+						if (prevProject > 0) {
+							return Math.max(prevProject - 1, 0);
+						}
+						return prevProject;
+					});
+					if (currentProject === 0) {
+						return Math.max(prevSlide - 1, 0);
+					}
 				}
 				return prevSlide;
 			});
-		}, [totalSlides]
+		}, [totalSlides, totalProjects]
 	);
+	
+	
 
 	const debouncedHandleWheel = useCallback(
 		(event: WheelEvent) => {

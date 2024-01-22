@@ -8,7 +8,7 @@ export default function NavBar() {
 
 	return (
 		<header className={`h-16 z-10 w-full fixed bottom-0 text-lightblue px-[3rem]  flex flex-row justify-end items-center transition-colors duration-1000
-		lg:top-0 ${ currentSlide === 0 ? 'text-white' : 'text-lightblue' }`}>
+		lg:top-0 ${ currentSlide % 2 === 0 ? 'text-white' : 'text-lightblue' }`}>
 			<MenuIcon />
 		</header>
 	);

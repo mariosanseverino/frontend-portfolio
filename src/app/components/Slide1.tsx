@@ -7,8 +7,8 @@ export default function Slide1() {
 			{/* Content for slide 1 */}
 			<div className='w-full flex flex-col gap-4'>
 				<div>
-					<h1 id='slide1-title' className='scale-x-150 translate-x-20'>Front-</h1>
-					<h1 id='slide1-title' className='scale-x-150 translate-x-20'>end</h1>
+					<h1 id='slide1-title'>Front-</h1>
+					<h1 id='slide1-title'>end</h1>
 				</div>
 				<h1 id='slide1-subtitle'>Developer<br />& UX Designer</h1>
 			</div>

@@ -22,7 +22,7 @@ export default function Slide2() {
 				</div>
 				<div className='flex flex-col gap-4'>
 					<h1 className='uppercase'>Stack</h1>
-					<div className='grid grid-cols-3 justify-center'>
+					<div className='grid grid-cols-3 gap-y-4 justify-center'>
 						{ techstack.map((tech, index) => (
 							<div key={ index } className='flex flex-col items-center'>
 								<img

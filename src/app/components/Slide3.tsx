@@ -1,36 +1,26 @@
 import React from 'react';
 import Project from './Project';
 import { useBehaviorContext } from '../context/BehaviorContext';
-
-const projects = {
-	'Gamp': {
-		title: 'Gamp',
-		logo: 'images/logogamp.png',
-		backgroundImage: '/images/cooking.jpg',
-		description: 'Discover new recipes, share your favorites',
-	},
-	'TableRise': {
-		title: 'TableRise',
-		logo: 'images/logotablerise.png',
-		backgroundImage: '/images/medieval.jpg',
-		description: 'Online user-friendly platform for RPG enthusiasts',
-	}
-};
+import projectsData from '../lib/Projects.json';
 
 export default function Slide3() {
-	const { currentSlide } = useBehaviorContext();
-	const projectTitle = currentSlide <= 3 ? 'Gamp' : 'TableRise';
+	const { currentProject } = useBehaviorContext();
+	const projects = JSON.parse(JSON.stringify(projectsData));
 
 	return (
-		<div className='swiper-slide flex flex-col justify-between relative' id='slide-3'>
+		<div className='swiper-slide bg-black flex flex-col justify-between relative' id='slide-3'>
 			<h1 className='uppercase z-10'>Projects</h1>
-			<div className='absolute inset-0' style={{ background: `url("${projects[projectTitle].backgroundImage}") center/cover no-repeat`, opacity: 0.5 }}></div>
+			<div
+				className='absolute inset-0 transition-opacity duration-1000 ease-in-out'
+				style={{
+					background: `url("${projects[currentProject].backgroundImage}") center/cover no-repeat`,
+					opacity: 0.5
+				}}/>
 			<Project
-				title={ projects[projectTitle].title }
-				description={ projects[projectTitle].description }
-				logo={ projects[projectTitle].logo }
+				title={ projects[currentProject].title }
+				description={ projects[currentProject].description }
+				logo={ projects[currentProject].logo }
 			/>
 		</div>
-
 	);
 }

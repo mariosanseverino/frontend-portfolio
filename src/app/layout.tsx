@@ -31,7 +31,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<BehaviorProvider>
-				<body className={`w-full flex flex-col ${ archivo.variable }`}>
+				<body className={`w-full flex flex-col ${ archivo.className }`}>
 					<NavBar />
 					{children}
 				</body>

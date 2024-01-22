@@ -6,15 +6,19 @@ import React, {
 	Dispatch,
 	SetStateAction
 } from 'react';
-import { ThemeProvider } from 'next-themes';
 
 export type BehaviorPropsTypes = {
 	currentSlide: number,
 	setCurrentSlide: Dispatch<SetStateAction<number>>,
+	currentProject: number,
+	setCurrentProject: Dispatch<SetStateAction<number>>,
 }
 
 export const BehaviorContext = createContext({
 	currentSlide: 0,
+	setCurrentSlide: () => {},
+	currentProject: 0,
+	setCurrentProject: () => {},
 } as BehaviorPropsTypes);
 
 interface BehaviorProviderProps {
@@ -23,17 +27,18 @@ interface BehaviorProviderProps {
 
 export default function BehaviorProvider({ children }: BehaviorProviderProps) {
 	const [currentSlide, setCurrentSlide] = useState(0);
+	const [currentProject, setCurrentProject] = useState(0);
 	
 	const contextValue = {
 		currentSlide,
-		setCurrentSlide
+		setCurrentSlide,
+		currentProject,
+		setCurrentProject
 	};
 	
 	return (
 		<BehaviorContext.Provider value={ contextValue }>
-			<ThemeProvider themes={['dark', 'light']} attribute='class'>
-				{ children }
-			</ThemeProvider>
+			{ children }
 		</BehaviorContext.Provider>
 	);
 }
