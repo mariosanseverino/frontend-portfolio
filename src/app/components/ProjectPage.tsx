@@ -1,10 +1,12 @@
 import React from 'react';
 import Project from './Project';
-import { useBehaviorContext } from '../context/BehaviorContext';
 import projectsData from '../lib/Projects.json';
 
-export default function Slide3() {
-	const { currentProject } = useBehaviorContext();
+type TProjectPageProps = {
+	currentProject: number,
+}
+
+export default function ProjectPage({ currentProject }: TProjectPageProps) {
 	const projects = JSON.parse(JSON.stringify(projectsData));
 
 	return (
@@ -14,12 +16,12 @@ export default function Slide3() {
 				className='absolute inset-0 transition-opacity duration-1000 ease-in-out'
 				style={{
 					background: `url("${projects[currentProject].backgroundImage}") center/cover no-repeat`,
-					opacity: 0.5
-				}}/>
+					opacity: 0.35
+				}} />
 			<Project
-				title={ projects[currentProject].title }
-				description={ projects[currentProject].description }
-				logo={ projects[currentProject].logo }
+				title={projects[currentProject].title}
+				description={projects[currentProject].description}
+				logo={projects[currentProject].logo}
 			/>
 		</div>
 	);
