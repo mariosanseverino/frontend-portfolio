@@ -1,12 +1,16 @@
 'use client';
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import SwiperWrapper from './components/SwiperWrapper';
 import { useBehaviorContext } from './context/BehaviorContext';
 import Menu from './components/Menu';
 
 export default function Home() {
-	const { currentSlide, setCurrentSlide } = useBehaviorContext();
 	const totalSlides = 4;
+	const { currentSlide, setCurrentSlide } = useBehaviorContext();
+	const [touchStart, setTouchStart] = useState<number | null>(null);
+	const [touchEnd, setTouchEnd] = useState<number | null>(null);
+	const minSwipeDistance = 50;
+	let isScrolling = false;
 
 	const handleWheel = useCallback(
 		(event: WheelEvent) => {
@@ -25,7 +29,6 @@ export default function Home() {
 		}, [totalSlides]
 	);
 	
-
 	const debouncedHandleWheel = useCallback(
 		(event: WheelEvent) => {
 			// Checks and prevents fast scrolling
@@ -41,7 +44,28 @@ export default function Home() {
 		}, [handleWheel]
 	);
 
-	let isScrolling = false;
+	function onTouchStart (event: React.TouchEvent) {
+		setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+		setTouchStart(event.targetTouches[0].clientY);
+	}
+	
+	function onTouchMove (event: React.TouchEvent) {
+		setTouchEnd(event.targetTouches[0].clientY);
+	}
+	
+	function onTouchEnd() {
+		if (!touchStart || !touchEnd) return;
+		const distance = touchStart - touchEnd;
+		const swipeUp = distance > minSwipeDistance;
+		const swipeDown = distance < -minSwipeDistance;
+		if (swipeUp || swipeDown) {
+			swipeDown ? setCurrentSlide((prevSlide) => {
+				return Math.max(prevSlide - 1, 0);
+			}) : setCurrentSlide((prevSlide) => {
+				return Math.min(prevSlide + 1, totalSlides - 1);
+			});
+		}
+	}
 
 	useEffect(() => {
 		// Add the mouse wheel scroll event listener when the component is mounted
@@ -55,7 +79,12 @@ export default function Home() {
 	);
 
 	return (
-		<main className='h-full relative'>
+		<main
+			className='h-full relative'
+			onTouchStart={ onTouchStart }
+			onTouchMove={ onTouchMove }
+			onTouchEnd={ onTouchEnd }
+		>
 			<SwiperWrapper
 				currentSlide={ currentSlide }
 			/>
