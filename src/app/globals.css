@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html, body {
+  height: 100%;
   font-family: var('--archivo-font');
   overflow: hidden;
 }
@@ -35,7 +36,7 @@ p {
 }
 
 #swiper-container {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
