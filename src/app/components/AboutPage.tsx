@@ -10,11 +10,11 @@ export default function AboutPage() {
 			<div className='flex flex-col gap-4'>
 				<div className='flex flex-col'>
 					<h2 className='uppercase'>About me</h2>
-					<p>
+					<p className='leading-5'>
 					I&apos;m a <strong>Front-end Developer</strong> with long years of professional experience in different areas,
 					such as a Graphic Designer and as a Digital Marketing Analyst, ultimately finding my passion in Web Development.
 					</p>
-					<p>
+					<p className='leading-5'>
 						<strong>Fluent in English and Portuguese</strong>, also being conversational in Italian, I can highlight myself as a quick learner,
 					highly empathetic work mate and a very creative problem-solver.
 					</p>
@@ -33,7 +33,7 @@ export default function AboutPage() {
 							</div>
 						)) }
 					</div>
-					<p>Everything about my education and all technologies I work with are detailed on my resume,
+					<p className='leading-5'>Everything about my education and all technologies I work with are detailed on my resume,
 						which you can download below. You can also find very precise information about my career on my LinkedIn page.</p>
 				</div>
 			</div>
