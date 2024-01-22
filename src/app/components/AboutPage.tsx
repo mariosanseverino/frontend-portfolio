@@ -27,7 +27,7 @@ export default function AboutPage() {
 								<img
 									src={ `/icons/${ tech.toLowerCase() }.png` }
 									alt={ `${ tech } icon` }
-									className='w-11'
+									className='w-8'
 								/>
 								<span className='font-bold'>{ tech === 'C-Sharp' ? 'C#' : tech }</span>
 							</div>
