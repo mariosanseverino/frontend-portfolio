@@ -15,6 +15,7 @@ export default function HomePage() {
 			<div
 				className='flex flex-col gap-1 mb-4 md:justify-start'
 			>
+				<img src='/images/profilepic.jpeg' alt="" className='rounded-full w-[14rem]' />
 				<h1>Mario Sanseverino</h1>
 				<div className='flex gap-2'>
 					<img src='/icons/pin.png' className='invert' />
