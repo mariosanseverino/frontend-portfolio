@@ -1,26 +1,23 @@
+'use client';
 import React from 'react';
+import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function Menu() {
-	const menuOptions = [
-		{ title: 'Home', link: '' },
-		{ title: 'About', link: '' },
-		{ title: 'Projects', link: '' },
-	];
-	
-	return (
-		<>
-			{/* Mobile version */}
-			<menu className='flex-row hidden px-2 lg:flex lg:order-2 lg:gap-8'>
-				{ menuOptions.map((option, index) => (
-					<li key={ index }>{ option.title }</li>
-				)) }
-			</menu>
+	const { menu, setMenu, setCurrentSlide } = useBehaviorContext();
+	const menuOptions = ['home', 'about', 'projects'];
 
-			{/* Desktop and tablet version */}
-			<menu className='lg:hidden'>
-				<h1>=</h1>
-			</menu>
-		
-		</>
+	function handleMenuOption(index: number) {
+		setCurrentSlide(index);
+		setMenu(false);
+	}
+
+	return (
+		<menu className={ `h-full w-full p-12 bg-black absolute top-0 left-0 flex flex-col justify-center gap-4 transition-opacity duration-1000 ${ menu ? 'opacity-100' : 'opacity-0' }` }>
+			<ul>
+				{ menuOptions.map((option, index) => (
+					<li key={ index } className='text-[2.3rem] uppercase' onClick={ () => handleMenuOption(index) }>{ option }</li>
+				)) }
+			</ul>
+		</menu>
 	);
 }
