@@ -2,6 +2,7 @@
 import React, { useEffect, useCallback } from 'react';
 import SwiperWrapper from './components/SwiperWrapper';
 import { useBehaviorContext } from './context/BehaviorContext';
+import Menu from './components/Menu';
 
 export default function Home() {
 	const { currentSlide, setCurrentSlide } = useBehaviorContext();
@@ -54,10 +55,11 @@ export default function Home() {
 	);
 
 	return (
-		<main className='h-full'>
+		<main className='h-full relative'>
 			<SwiperWrapper
 				currentSlide={ currentSlide }
 			/>
+			<Menu />
 		</main>
 	);
 }

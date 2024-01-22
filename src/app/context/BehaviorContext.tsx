@@ -10,15 +10,15 @@ import React, {
 export type BehaviorPropsTypes = {
 	currentSlide: number,
 	setCurrentSlide: Dispatch<SetStateAction<number>>,
-	currentProject: number,
-	setCurrentProject: Dispatch<SetStateAction<number>>,
+	menu: boolean,
+	setMenu: Dispatch<SetStateAction<boolean>>,
 }
 
 export const BehaviorContext = createContext({
 	currentSlide: 0,
 	setCurrentSlide: () => {},
-	currentProject: 0,
-	setCurrentProject: () => {},
+	menu: false,
+	setMenu: () => {},
 } as BehaviorPropsTypes);
 
 interface BehaviorProviderProps {
@@ -27,13 +27,13 @@ interface BehaviorProviderProps {
 
 export default function BehaviorProvider({ children }: BehaviorProviderProps) {
 	const [currentSlide, setCurrentSlide] = useState(0);
-	const [currentProject, setCurrentProject] = useState(0);
+	const [menu, setMenu] = useState(false);
 	
 	const contextValue = {
 		currentSlide,
 		setCurrentSlide,
-		currentProject,
-		setCurrentProject
+		menu,
+		setMenu
 	};
 	
 	return (
