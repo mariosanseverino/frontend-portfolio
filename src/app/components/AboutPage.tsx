@@ -8,8 +8,8 @@ export default function AboutPage() {
 	return (
 		<section className='swiper-slide bg-white text-black flex flex-col justify-between text-left' id='slide-2'>
 			<div className='flex flex-col gap-4'>
-				<div className='flex flex-col gap-4'>
-					<h1 className='uppercase'>About me</h1>
+				<div className='flex flex-col'>
+					<h2 className='uppercase'>About me</h2>
 					<p>
 					I&apos;m a <strong>Front-end Developer</strong> with long years of professional experience in different areas,
 					such as a Graphic Designer and as a Digital Marketing Analyst, ultimately finding my passion in Web Development.
@@ -19,9 +19,9 @@ export default function AboutPage() {
 					highly empathetic work mate and a very creative problem-solver.
 					</p>
 				</div>
-				<div className='flex flex-col gap-4'>
-					<h1 className='uppercase'>Stack</h1>
-					<div className='grid grid-cols-3 gap-y-4 justify-center'>
+				<div className='flex flex-col'>
+					<h2 className='uppercase'>Stack</h2>
+					<div className='grid grid-cols-3 gap-y-4 justify-center mb-4'>
 						{ techstack.map((tech, index) => (
 							<div key={ index } className='flex flex-col items-center'>
 								<img
