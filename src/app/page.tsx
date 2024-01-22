@@ -1,16 +1,16 @@
 'use client';
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import SwiperWrapper from './components/SwiperWrapper';
 import { useBehaviorContext } from './context/BehaviorContext';
 import Menu from './components/Menu';
 
 export default function Home() {
-	const { currentSlide, setCurrentSlide } = useBehaviorContext();
 	const totalSlides = 4;
+	const { currentSlide, setCurrentSlide } = useBehaviorContext();
+	const [touchStart, setTouchStart] = useState<number | null>(null);
+	const [touchEnd, setTouchEnd] = useState<number | null>(null);
+	const minSwipeDistance = 50;
 	let isScrolling = false;
-	let touchStart = 0;
-	let touchEnd = 0;
-	let isSwiping = false;
 
 	const handleWheel = useCallback(
 		(event: WheelEvent) => {
@@ -44,44 +44,32 @@ export default function Home() {
 		}, [handleWheel]
 	);
 
-	function handleSwipe() {
-		const delta = touchEnd - touchStart;
-		const threshold = 50; // Minimum swipe distance
-			
-		setCurrentSlide((prevSlide) => {
-			if (delta < threshold) {
-				return Math.min(prevSlide + 1, totalSlides - 1);
-			} else if (delta !== 0 && delta > threshold) {
-				return Math.max(prevSlide - 1, 0);
-			}
-			return prevSlide;
-		});
+	function onTouchStart (event: React.TouchEvent) {
+		setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+		setTouchStart(event.targetTouches[0].clientY);
 	}
-
-	const debouncedSwipe = useCallback(
-		() => {
-			if (!isSwiping) {
-				isSwiping = true;
-
-				handleSwipe();
-
-				setTimeout(() => {
-					isSwiping = false;
-				}, 1000);
-			}
-		}, [handleSwipe]
-	);
+	
+	function onTouchMove (event: React.TouchEvent) {
+		setTouchEnd(event.targetTouches[0].clientY);
+	}
+	
+	function onTouchEnd() {
+		if (!touchStart || !touchEnd) return;
+		const distance = touchStart - touchEnd;
+		const swipeUp = distance > minSwipeDistance;
+		const swipeDown = distance < -minSwipeDistance;
+		if (swipeUp || swipeDown) {
+			swipeDown ? setCurrentSlide((prevSlide) => {
+				return Math.max(prevSlide - 1, 0);
+			}) : setCurrentSlide((prevSlide) => {
+				return Math.min(prevSlide + 1, totalSlides - 1);
+			});
+		}
+	}
 
 	useEffect(() => {
 		// Add the mouse wheel scroll event listener when the component is mounted
 		document.addEventListener('wheel', debouncedHandleWheel);
-		document.addEventListener('touchstart', (event: TouchEvent) => {
-			touchStart = event.changedTouches[0].screenY;
-		});
-		document.addEventListener('touchend', (event: TouchEvent) => {
-			touchEnd = event.changedTouches[0].screenY;
-			debouncedSwipe();
-		});
 
 		// Remove the event listener when the component is unmounted
 		return () => {
@@ -91,7 +79,12 @@ export default function Home() {
 	);
 
 	return (
-		<main className='h-full relative'>
+		<main
+			className='h-full relative'
+			onTouchStart={ onTouchStart }
+			onTouchMove={ onTouchMove }
+			onTouchEnd={ onTouchEnd }
+		>
 			<SwiperWrapper
 				currentSlide={ currentSlide }
 			/>
