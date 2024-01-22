@@ -11,6 +11,7 @@ export default function ProjectPage({ currentProject }: TProjectPageProps) {
 
 	return (
 		<section className='swiper-slide bg-black flex flex-col relative' id='slide-3'>
+			<h1 className='uppercase z-10'>Projects</h1>
 			<div
 				className='absolute inset-0 transition-opacity duration-1000 ease-in-out'
 				style={{
