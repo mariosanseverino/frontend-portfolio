@@ -10,8 +10,7 @@ export default function ProjectPage({ currentProject }: TProjectPageProps) {
 	const projects = JSON.parse(JSON.stringify(projectsData));
 
 	return (
-		<div className='swiper-slide bg-black flex flex-col justify-between relative' id='slide-3'>
-			<h1 className='uppercase z-10'>Projects</h1>
+		<section className='swiper-slide bg-black flex flex-col relative' id='slide-3'>
 			<div
 				className='absolute inset-0 transition-opacity duration-1000 ease-in-out'
 				style={{
@@ -23,6 +22,6 @@ export default function ProjectPage({ currentProject }: TProjectPageProps) {
 				description={projects[currentProject].description}
 				logo={projects[currentProject].logo}
 			/>
-		</div>
+		</section>
 	);
 }
