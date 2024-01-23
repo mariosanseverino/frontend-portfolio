@@ -3,12 +3,11 @@ import React from 'react';
 
 export default function HomePage() {
 	return (
-		<section className='swiper-slide flex flex-col h-full justify-between bg-lightblue text-white' id='slide-1'>
-			{/* Content for slide 1 */}
+		<section className='swiper-slide flex flex-col h-full justify-between bg-lightblue text-white gradient' id='slide-1'>
 			<div className='w-full flex flex-col gap-4'>
 				<div>
-					<h1 id='slide1-title'>Front-</h1>
-					<h1 id='slide1-title'>end</h1>
+					<h1 id='slide1-title' className='uppercase'>Front</h1>
+					<h1 id='slide1-title' className='uppercase'>end</h1>
 				</div>
 				<h1>Developer<br />& UX Designer</h1>
 			</div>
