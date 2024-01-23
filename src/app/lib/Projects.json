@@ -2,13 +2,15 @@
     "0": {
       "title": "Gamp",
       "logo": "images/logogamp.png",
-      "backgroundImage": "/images/cooking.jpg",
-      "description": "Discover new recipes, share your favorites"
+      "background": "/videos/gamp.mp4",
+      "description": "Discover new recipes, share your favorites",
+      "link": "https://github.com/GAMP-GROUP"
     },
     "1": {
       "title": "TableRise",
       "logo": "images/logotablerise.png",
-      "backgroundImage": "/images/medieval.jpg",
-      "description": "Online user-friendly platform for RPG enthusiasts"
+      "background": "/videos/tablerise.mp4",
+      "description": "Online user-friendly platform for RPG enthusiasts",
+      "link": "https://github.com/TableRise"
     }
 }
