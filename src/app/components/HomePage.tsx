@@ -8,12 +8,15 @@ export default function HomePage() {
 				<h1>Welcome to my portfolio 👋</h1>
 			</div>
 			<div
-				className='flex flex-col gap-1 mb-4 md:justify-start'
+				className='flex flex-col gap-4 w-full'
 			>
-				<h1>Mario Sanseverino</h1>
-				<div className='flex gap-2'>
-					<img src='/icons/pin.png' className='invert' />
-					<span>Porto Alegre, BRA</span>
+				<img src='/images/profilepic.jpeg' alt='Mario&apos;s profile picture' className='w-48 rounded-3xl shadow-md' />
+				<div>
+					<h2>Mario Sanseverino</h2>
+					<div className='flex gap-2'>
+						<img src='/icons/pin.png' className='invert' />
+						<span>Porto Alegre, BRA</span>
+					</div>
 				</div>
 			</div>
 		</section>
