@@ -17,6 +17,7 @@ export default function ProjectPage({ currentProject }: TProjectPageProps) {
 				muted
 				className='opacity-60 object-cover w-screen h-screen absolute top-0 left-0'
 				autoPlay
+				playsInline
 			>
 				<source src={projects[currentProject].background} type='video/mp4' />
 			</video>
