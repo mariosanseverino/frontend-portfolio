@@ -8,20 +8,24 @@ type TProjectPageProps = {
 
 export default function ProjectPage({ currentProject }: TProjectPageProps) {
 	const projects = JSON.parse(JSON.stringify(projectsData));
+	const hasVideo = projects[currentProject]?.background; // Check if the current project has a background video
 
 	return (
 		<section className='swiper-slide bg-black flex flex-col relative' id='slide-3'>
-			<h1 className='uppercase z-10'>Projects</h1>
-			<div
-				className='absolute inset-0 transition-opacity duration-1000 ease-in-out'
-				style={{
-					background: `url("${projects[currentProject].backgroundImage}") center/cover no-repeat`,
-					opacity: 0.35
-				}} />
+			<h2 className='uppercase z-10'>Projects</h2>
+			<video
+				loop
+				muted
+				className='opacity-60 object-cover w-screen h-screen absolute top-0 left-0'
+				{...(hasVideo && { autoPlay: true })} // Conditionally add autoPlay
+			>
+				<source src={projects[currentProject].background} type='video/mp4' />
+			</video>
 			<Project
 				title={projects[currentProject].title}
 				description={projects[currentProject].description}
 				logo={projects[currentProject].logo}
+				link={projects[currentProject].link}
 			/>
 		</section>
 	);

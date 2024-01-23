@@ -1,5 +1,4 @@
 import React from 'react';
-import ScrollDownArrow from './ScrollDownArrow';
 import DowloadResumeBtn from './DownloadResumeBtn';
 
 export default function AboutPage() {
@@ -11,7 +10,7 @@ export default function AboutPage() {
 				<div className='flex flex-col'>
 					<h2 className='uppercase'>About me</h2>
 					<p className='leading-[1.17rem]'>
-					I&apos;m a <strong>Front-end Developer</strong> with long years of professional experience in different areas,
+					I&apos;m a junior <strong>Front-end Developer</strong>, with long years of professional experience in different areas,
 					such as a Graphic Designer and as a Digital Marketing Analyst, ultimately finding my passion in Web Development.
 					</p>
 					<p className='leading-[1.17rem]'>
@@ -38,7 +37,6 @@ export default function AboutPage() {
 				</div>
 			</div>
 			<DowloadResumeBtn />
-			<ScrollDownArrow />
 		</section>
 	);
 }

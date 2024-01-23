@@ -6,7 +6,7 @@ import Menu from './components/Menu';
 
 export default function Home() {
 	const totalSlides = 4;
-	const { currentSlide, setCurrentSlide } = useBehaviorContext();
+	const { currentSlide, setCurrentSlide, menu } = useBehaviorContext();
 	const [touchStart, setTouchStart] = useState<number | null>(null);
 	const [touchEnd, setTouchEnd] = useState<number | null>(null);
 	const minSwipeDistance = 50;
@@ -88,7 +88,7 @@ export default function Home() {
 			<SwiperWrapper
 				currentSlide={ currentSlide }
 			/>
-			<Menu />
+			{ menu && <Menu /> }
 		</main>
 	);
 }
