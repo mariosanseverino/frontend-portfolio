@@ -12,6 +12,7 @@ export default function NavBar() {
 		${ currentSlide === 1 ? 'text-lightblue' : 'text-white' }`}>
 			<SocialMediaBtn type='linkedin' />
 			<SocialMediaBtn type='github' />
+			<SocialMediaBtn type='behance' />
 			<MenuIcon />
 		</nav>
 	);
