@@ -2,13 +2,15 @@ import React from 'react';
 
 export default function HomePage() {
 	return (
-		<section className='swiper-slide flex flex-col h-full justify-between bg-lightblue text-white gradient' id='slide-1'>
-			<div>
+		<section className='swiper-slide flex flex-col h-full justify-between bg-lightblue text-white gradient lg:relative' id='slide-1'>
+			<div className='lg:absolute lg:left-16 lg:top-16'>
 				<h1 id='slide1-title'>Hi!</h1>
-				<h1>Welcome to my portfolio 👋</h1>
+				<h1>Welcome to my <br/>portfolio 👋</h1>
 			</div>
 			<div
-				className='flex flex-col gap-4 w-full'
+				id='author'
+				className={ `flex flex-col gap-4 w-full
+				lg:flex-row lg:items-center lg:justify-center lg:h-full` }
 			>
 				<img src='/images/profilepic.jpeg' alt='Mario&apos;s profile picture' className='w-48 rounded-3xl shadow-md' />
 				<div>
