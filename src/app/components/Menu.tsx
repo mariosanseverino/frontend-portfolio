@@ -27,7 +27,7 @@ export default function Menu() {
 			>
 				<ul>
 					{ menuOptions.map((option, index) => (
-						<li key={ index } className='text-[2.3rem] uppercase' onClick={ () => handleMenuOption(index) }>{ option }</li>
+						<li key={ index } className='text-[2.3rem] uppercase cursor-pointer' onClick={ () => handleMenuOption(index) }>{ option }</li>
 					)) }
 				</ul>
 			</menu>

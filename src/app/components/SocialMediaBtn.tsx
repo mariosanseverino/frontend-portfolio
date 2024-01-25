@@ -23,7 +23,7 @@ export default function SocialMediaBtn({ type }: TSocialMediaBtnProps) {
 
 	return (
 		<Link href={ socialMedias[type].url } target='_blank'>
-			<svg className='w-[1.5rem]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d={ socialMedias[type].svgPath }></path></svg>
+			<svg className='w-[1.5rem] transition-transform duration-300 lg:hover:scale-105' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d={ socialMedias[type].svgPath }></path></svg>
 		</Link>
 	);
 }

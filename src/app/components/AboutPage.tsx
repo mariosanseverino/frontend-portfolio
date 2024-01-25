@@ -48,21 +48,24 @@ export default function AboutPage() {
 							</div>
 						)) }
 					</div>
-					<p className='leading-[1.17rem] lg:hidden'>
+					<p className='leading-[1.17rem] xl:hidden'>
 						Everything about my education and all technologies I work with are better detailed on my resume,
 						which you can download below. You can also find very precise information about my career on my LinkedIn page.
 					</p>
-					<p className='leading-[1.17rem] lg:block' hidden>
+					<p className='leading-[1.17rem] xl:block' hidden>
 						I specialize in creating user-friendly UIs using React, TypeScript, and CSS. Not only that,
 						I have also explored back-end technologies like NodeJS and MySQL using layered architecture.
 						Everything tested both in unit and integration. Not forgetting hands-on experience in Agile methodologies, SDLC, and proficient use of Git for version control
 					</p>
+					<div className='lg:block xl:hidden'>
+						<DowloadResumeBtn />
+					</div>
 				</div>
 			</div>
 			<div className={ `flex flex-col gap-4
 			lg:w-[20rem]` }>
-				<h2 className='uppercase lg:block' hidden>Education</h2>
-				<p className='leading-[1.17rem] mb-2 lg:block' hidden>
+				<h2 className='uppercase xl:block' hidden>Education</h2>
+				<p className='leading-[1.17rem] mb-2 xl:block' hidden>
 					From a young age, my curiosity for technology led me to enroll in a hardware technical course at SENAC in 2012.
 					Although completed, it didn&apos;t capture my attention then.
 					<br/>My academic journey took me through Mechanical Engineering at PUC and Physics at UFRGS, but the quest for something different persisted.
@@ -72,9 +75,11 @@ export default function AboutPage() {
 					The desire to solve these problems fueled my transition into the dynamic world of coding.
 					<br/>My career and educational background is summarized on my LinkedIn page, also on my resume, which can be downloaded below.
 				</p>
-				<DowloadResumeBtn />
+				<div className='xl:block' hidden>
+					<DowloadResumeBtn />
+				</div>
 			</div>
-			<ul className='flex-col gap-4 lg:flex' hidden>
+			<ul className='flex-col gap-4 xl:flex' hidden>
 				{ timeline.map(({ year, event }, index) => (
 					<li key={ index }>
 						<span className='font-bold'>{ year }</span>
