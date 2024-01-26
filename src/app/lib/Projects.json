@@ -3,14 +3,24 @@
       "title": "Gamp",
       "logo": "images/logogamp.png",
       "background": "/videos/gamp.mp4",
-      "description": "Discover new recipes, share your favorites",
-      "link": "https://github.com/GAMP-GROUP"
+      "short": "Discover new recipes, share your favorites",
+      "long": "Gamp is a platform for exploring new recipes, for foods and drinks. As the Front-end head developer, I have played a pivotal role in both the design and coding processes. Not only I contributed coding the Front-end of the project, but also I created the visual identity by designing the logo and illustrations used in the app.",
+      "role": "Front-end developer",
+      "setting": "Team of three juniors full-stack developers",
+      "duration": "8 months",
+      "link": "https://github.com/GAMP-GROUP",
+      "stack": ["Docker", "Prisma.db", "Next.js", "Tailwind CSS", "TypeScript", "JavaScript", "Cypress.js"]
     },
     "1": {
       "title": "TableRise",
       "logo": "images/logotablerise.png",
       "background": "/videos/tablerise.mp4",
-      "description": "Online user-friendly platform for RPG enthusiasts",
-      "link": "https://github.com/TableRise"
+      "short": "Online user-friendly platform for RPG enthusiasts",
+      "long": "Table Rise is an online platform for playing tabletop RPGs based on Dungeons & Dragons. My duties here started in the UX development team, helping creating the mockups in the prototyping phase. Later, I transitioned to the Front-end team to code both the application itself and automated tests.",
+      "role": "Front-end developer and UX designer",
+      "setting": "Team of 12, including project manager, product owner, UX designers and developers.",
+      "duration": "18 months",
+      "link": "https://github.com/TableRise",
+      "stack": ["Docker", "Node.js", "Mongo.db", "Redis", "JavaScript", "React.js", "Mocha.js", "Chai.js", "Sinon.js", "Jest.js", "HTML", "Tailwind CSS"]
     }
 }

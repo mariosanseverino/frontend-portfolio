@@ -7,7 +7,7 @@ type TProjectPageProps = {
 }
 
 export default function ProjectPage({ currentProject }: TProjectPageProps) {
-	const projects = JSON.parse(JSON.stringify(projectsData));
+	const projects = JSON.parse(JSON.stringify(projectsData));	
 
 	return (
 		<section className='swiper-slide bg-black flex flex-col relative' id='slide-3'>
@@ -23,9 +23,14 @@ export default function ProjectPage({ currentProject }: TProjectPageProps) {
 			</video>
 			<Project
 				title={projects[currentProject].title}
-				description={projects[currentProject].description}
+				short={projects[currentProject].short}
+				long={projects[currentProject].long}
+				role={projects[currentProject].role}
+				setting={projects[currentProject].setting}
+				duration={projects[currentProject].duration}
 				logo={projects[currentProject].logo}
 				link={projects[currentProject].link}
+				stack={projects[currentProject].stack}
 			/>
 		</section>
 	);

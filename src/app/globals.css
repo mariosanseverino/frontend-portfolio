@@ -86,13 +86,13 @@ p {
   100% { transform: rotate( 0.0deg) }
 }
 
-.download-resume {
+.full-width-btn {
   background: linear-gradient(270deg, #0d0d0d, #5058f2);
   background: linear-gradient(270deg, #0d0d0d, #5058f2);
   background-size: 400% 400%;
 }
 
-.download-resume:hover {
+.full-width-btn:hover {
   background: linear-gradient(270deg, #0d0d0d, #5058f2);
   background-size: 400% 400%;
   transform: scale(1.01);
