@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 
-export default function ViewMoreBtn() {
+type ViewMoreBtnProps = {
+	setCard: Dispatch<SetStateAction<boolean>>,
+}
+
+export default function ViewMoreBtn({ setCard }: ViewMoreBtnProps) {
+	function openProjectCard() {
+		setCard(true);
+	}
+
 	return (
-		<div className='flex z-10 xl:hidden'>
+		<button
+			className='flex z-10'
+			onClick={ openProjectCard }
+		>
 			<span>View more</span>
 			<img src='/icons/arrow-right-up.svg' className='invert w-6' alt='Arrow' />
-		</div>
+		</button>
 	);
 }

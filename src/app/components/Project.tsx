@@ -1,5 +1,4 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import ViewMoreBtn from './ViewMoreBtn';
 import ProjectCard from './ProjectCard';
 
@@ -16,17 +15,28 @@ type ProjectsProps = {
 }
 
 export default function Project({ title, logo, short, long, role, setting, duration, stack, link }: ProjectsProps) {
+	const [card, setCard] = useState(false);
+
 	return (
-		<section className={ `h-full flex flex-col justify-center gap-4 absolute top-0 left-0
-		lg:relative lg:flex-row lg:items-center lg:gap-[8rem]` }>
-			<div className='flex flex-col items-center gap-4'>
-				<img src={ logo } className='w-[11.375rem] z-10' alt={ `${ title } logo` } />
-				<p className='project-description w-full'>{ short }</p>
-				<Link href={ link } target='_blank'>
-					<ViewMoreBtn />
-				</Link>
+		<section className={ `h-full z-10 relative flex flex-col items-center justify-end
+		` }>
+			<div className='absolute top-1/2 -translate-y-1/2 flex flex-col items-center gap-4'>
+				<img
+					src={ logo }
+					className='w-[11.375rem] z-10'
+					alt={ `${ title } logo` }
+				/>
+				<p className='project-description w-full'>
+					{ short }
+				</p>
+				<ViewMoreBtn
+					setCard={ setCard }
+				/>
 			</div>
 			<ProjectCard
+				title={ title }
+				card={ card }
+				setCard={ setCard }
 				long={ long }
 				role={ role }
 				setting={ setting }
