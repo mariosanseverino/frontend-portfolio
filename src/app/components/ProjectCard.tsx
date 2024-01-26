@@ -33,7 +33,9 @@ export default function ProjectCard({ title, card, setCard, long, role, setting,
 	return (
 		<section
 			id={ `projectcard-${ title.toLowerCase() }` }
-			className={ `z-20 bg-white text-black w-screen h-5/6 py-[3rem] px-[2.3rem] rounded-t-3xl flex flex-col gap-[3rem] justify-between transition duration-500 ${ card ? 'translate-y-[2.75rem]' : 'translate-y-full opacity-0' }`}
+			className={ `z-20 bg-white text-black w-screen h-5/6 py-[3rem] px-[2.3rem] rounded-t-3xl flex flex-col gap-[3rem] justify-between transition duration-500
+			${ card ? 'translate-y-[2.75rem] lg:translate-y-[4rem]' : 'translate-y-full opacity-0' }
+			lg:w-2/4`}
 		>
 			<div className='flex flex-col gap-4 relative'>
 				<div>

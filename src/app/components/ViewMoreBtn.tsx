@@ -14,7 +14,7 @@ export default function ViewMoreBtn({ setCard }: ViewMoreBtnProps) {
 			className='flex z-10'
 			onClick={ openProjectCard }
 		>
-			<span>View more</span>
+			<span className='underline'>View more</span>
 			<img src='/icons/arrow-right-up.svg' className='invert w-6' alt='Arrow' />
 		</button>
 	);
