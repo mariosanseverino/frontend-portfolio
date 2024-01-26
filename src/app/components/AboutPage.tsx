@@ -1,22 +1,9 @@
 import React from 'react';
+import timelineData from '../lib/Timeline.json';
 import FullWidthBtn from './FullWidthBtn';
 
 export default function AboutPage() {
 	const techstack = ['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'C-Sharp'];
-	const timeline = [
-		{ year: 2010, event: 'Finished high school' },
-		{ year: 2012, event: 'Engineering, physics and hardware course' },
-		{ year: 2013, event: 'Enrolled business management' },
-		{ year: 2015, event: 'First job in marketing' },
-		{ year: 2016, event: 'Internship in financial planning' },
-		{ year: 2017, event: 'Changed to a graphic design internship' },
-		{ year: 2018, event: 'Graduation and moved to Sydney/AUS' },
-		{ year: 2019, event: 'Started studying HTML, CSS and JavaScript' },
-		{ year: 2020, event: 'Back to Brazil, new marketing job' },
-		{ year: 2021, event: 'Promotion to Digital Marketing Analyst' },
-		{ year: 2022, event: 'Full-stack development bootcamp' },
-		{ year: 2023, event: 'Completed the bootcamp' },
-	];
 
 	return (
 		<section
@@ -58,12 +45,6 @@ export default function AboutPage() {
 						I have also explored back-end technologies like NodeJS and MySQL using layered architecture.
 						Everything tested both in unit and integration. Not forgetting hands-on experience in Agile methodologies, SDLC, and proficient use of Git for version control
 					</p>
-					<div className='lg:block xl:hidden'>
-						<FullWidthBtn
-							title='View resume'
-							link='https://docs.google.com/document/d/1Dto16FZorrhd39cfuKaVNWYYMvBTZR_5zhpXMbZ69gs/edit?usp=sharing'
-						/>
-					</div>
 				</div>
 			</div>
 			<div className={`flex flex-col gap-4
@@ -87,13 +68,19 @@ export default function AboutPage() {
 				</div>
 			</div>
 			<ul className='flex-col gap-4 overflow-y-auto xl:flex' hidden>
-				{timeline.map(({ year, event }, index) => (
+				{ timelineData.map(({ year, event }, index) => (
 					<li key={index}>
 						<span className='font-bold'>{year}</span>
 						<p className='leading-[1.17rem]'>{event}</p>
 					</li>
-				))}
+				)) }
 			</ul>
+			<div className='lg:block xl:hidden'>
+				<FullWidthBtn
+					title='View resume'
+					link='https://docs.google.com/document/d/1Dto16FZorrhd39cfuKaVNWYYMvBTZR_5zhpXMbZ69gs/edit?usp=sharing'
+				/>
+			</div>
 		</section>
 	);
 }
