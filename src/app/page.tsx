@@ -5,7 +5,7 @@ import { useBehaviorContext } from './context/BehaviorContext';
 import Menu from './components/Menu';
 
 export default function Home() {
-	const totalSlides = 4;
+	const totalSlides = 5;
 	const { currentSlide, setCurrentSlide, menu } = useBehaviorContext();
 	const [touchStart, setTouchStart] = useState<number | null>(null);
 	const [touchEnd, setTouchEnd] = useState<number | null>(null);

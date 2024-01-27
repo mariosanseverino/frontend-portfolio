@@ -10,12 +10,13 @@ type ProjectCardProps = {
 	role: string,
 	setting: string,
 	duration: string,
-	link: string,
+	deploy?: string,
+	repository: string,
 	stack: string[]
 }
 
-export default function ProjectCard({ title, card, setCard, long, role, setting, duration, link, stack }: ProjectCardProps) {
-	const { currentSlide } = useBehaviorContext();
+export default function ProjectCard({ title, card, setCard, long, role, setting, duration, deploy, repository, stack }: ProjectCardProps) {
+	const { currentSlide } = useBehaviorContext();	
 
 	const stackTags = stack.map((tech, index) => (
 		<span
@@ -52,10 +53,22 @@ export default function ProjectCard({ title, card, setCard, long, role, setting,
 					<img src='/icons/close.png' alt="" />
 				</button>
 			</div>
-			<FullWidthBtn
+			{ deploy ? (
+				<div className='w-full flex flex-col justify-center items-center gap-4'>
+					<FullWidthBtn
+						title='Access deploy'
+						link={ deploy }
+					/>
+					<a href={ repository }>
+						<button className='flex underline'>
+							View repository
+						</button>
+					</a>
+				</div>
+			) : <FullWidthBtn
 				title='View repository'
-				link={ link }
-			/>
+				link={ repository }
+			/> }
 		</section>
 	);
 }

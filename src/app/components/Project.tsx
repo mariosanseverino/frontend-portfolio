@@ -10,11 +10,12 @@ type ProjectsProps = {
 	role: string,
 	setting: string,
 	duration: string,
-	link: string,
+	deploy?: string,
+	repository: string,
 	stack: string[],
 }
 
-export default function Project({ title, logo, short, long, role, setting, duration, stack, link }: ProjectsProps) {
+export default function Project({ title, logo, short, long, role, setting, duration, stack, deploy, repository }: ProjectsProps) {
 	const [card, setCard] = useState(false);
 
 	return (
@@ -41,7 +42,8 @@ export default function Project({ title, logo, short, long, role, setting, durat
 				role={ role }
 				setting={ setting }
 				duration={ duration }
-				link={ link }
+				deploy={ deploy ? deploy : undefined }
+				repository={ repository }
 				stack={ stack }
 			/>
 		</section>

@@ -20,6 +20,7 @@ export default function SwiperWrapper({ currentSlide }: TSwiperWrapperProps) {
 				<AboutPage />
 				<ProjectPage currentProject={0} />
 				<ProjectPage currentProject={1} />
+				<ProjectPage currentProject={2} />
 			</section>
 		</section>
 	);
