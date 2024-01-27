@@ -7,6 +7,8 @@ type TProjectPageProps = {
 }
 
 export default function ProjectPage({ currentProject }: TProjectPageProps) {
+	const projects = JSON.parse(JSON.stringify(projectsData));
+
 	return (
 		<section className='swiper-slide bg-black flex flex-col relative' id='slide-3'>
 			<h2 className='uppercase z-10'>Projects</h2>
@@ -17,19 +19,19 @@ export default function ProjectPage({ currentProject }: TProjectPageProps) {
 				autoPlay
 				playsInline
 			>
-				<source src={projectsData[currentProject].background} type='video/mp4' />
+				<source src={projects[currentProject].background} type='video/mp4' />
 			</video>
 			<Project
-				title={projectsData[currentProject].title}
-				short={projectsData[currentProject].short}
-				long={projectsData[currentProject].long}
-				role={projectsData[currentProject].role}
-				setting={projectsData[currentProject].setting}
-				duration={projectsData[currentProject].duration}
-				logo={projectsData[currentProject].logo}
-				deploy={projectsData[currentProject].deploy}
-				repository={projectsData[currentProject].repository}
-				stack={projectsData[currentProject].stack}
+				title={projects[currentProject].title}
+				short={projects[currentProject].short}
+				long={projects[currentProject].long}
+				role={projects[currentProject].role}
+				setting={projects[currentProject].setting}
+				duration={projects[currentProject].duration}
+				logo={projects[currentProject].logo}
+				deploy={projects[currentProject].deploy}
+				repository={projects[currentProject].repository}
+				stack={projects[currentProject].stack}
 			/>
 		</section>
 	);
