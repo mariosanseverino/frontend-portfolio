@@ -24,10 +24,10 @@ export default function Project({ title, logo, short, long, role, setting, durat
 			<div className='absolute top-1/2 -translate-y-1/2 flex flex-col items-center gap-4'>
 				<img
 					src={ logo }
-					className='w-[11.375rem] z-10'
+					className='w-[11.375rem] z-10 lg:w-[15rem]'
 					alt={ `${ title } logo` }
 				/>
-				<p className='project-description w-full'>
+				<p className='project-description'>
 					{ short }
 				</p>
 				<ViewMoreBtn
