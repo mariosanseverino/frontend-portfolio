@@ -4,7 +4,7 @@ import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function Menu() {
 	const { menu, setMenu, currentSlide, setCurrentSlide } = useBehaviorContext();
-	const menuOptions = ['home', 'about', 'gamp', 'tablerise', 'tattoo drawings'];
+	const menuOptions = ['home', 'about', 'projects'];
 
 	function handleMenuOption(index: number) {
 		setCurrentSlide(index);
@@ -40,7 +40,7 @@ export default function Menu() {
 			<menu
 				className={ 'bg-black h-full w-full p-8 absolute top-0 left-0 flex flex-col justify-center gap-4 transition-opacity duration-1000 opacity-0' }	
 			>
-				<ul id='menu-list' className='flex flex-col gap-4'>
+				<ul id='menu-list' className='h-full flex flex-col justify-center gap-2'>
 					{ menuOptions.map((option, index) => (
 						<li
 							key={ index }
