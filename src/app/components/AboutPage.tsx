@@ -3,7 +3,7 @@ import FullWidthBtn from './FullWidthBtn';
 
 export default function AboutPage() {
 	const techstack = ['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'C-Sharp'];
-	const eduInstitutes = ['espm', 'trybe', 'mit', 'warwick'];
+	const eduInstitutes = ['espm', 'trybe', 'google', 'mit'];
 
 	return (
 		<section
@@ -38,9 +38,9 @@ export default function AboutPage() {
 							))}
 						</div>
 						<p className='leading-[1.17rem]'>
-						I specialize in creating user-friendly UIs using React, TypeScript, and CSS. Not only that,
+						I specialize in creating user-friendly UIs using UX-design techniques combined with coding. Not only that,
 						I have also explored back-end technologies like NodeJS and MySQL using layered architecture,
-						while also taking advantage of unit and integration automated tests with libraries like RTL, Cypress and Jest.
+						while taking advantage of unit and integration automated tests with libraries like RTL, Cypress and Jest.
 						</p>
 					</div>
 				</div>
@@ -63,6 +63,7 @@ export default function AboutPage() {
 					The desire to solve these problems fueled my transition into the dynamic world of coding.
 						<br />My career and educational background is summarized on my LinkedIn page, also on my resume.
 					</p>
+					<h3>Certificated by:</h3>
 					<div className='lg:grid grid-cols-2 items-center justify-center' hidden>
 						{ eduInstitutes.map((school, index) => (
 							<img
