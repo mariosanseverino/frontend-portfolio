@@ -4,6 +4,7 @@ import SwiperWrapper from './components/SwiperWrapper';
 import { useBehaviorContext } from './context/BehaviorContext';
 import Menu from './components/Menu';
 import NavStatus from './components/NavStatus';
+import ProjectNavStatus from './components/ProjectNavStatus';
 
 export default function Home() {
 	const totalSlides = 5;
@@ -91,6 +92,7 @@ export default function Home() {
 			onTouchEnd={ onTouchEnd }
 		>
 			<NavStatus />
+			{ currentSlide >= 2 && <ProjectNavStatus /> }
 			<SwiperWrapper
 				currentSlide={ currentSlide }
 			/>

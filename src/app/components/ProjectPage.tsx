@@ -1,13 +1,28 @@
 import React from 'react';
 import ProjectThumb from './ProjectThumb';
-import projectsData from '../lib/Projects.json';
+import ProjectsData from '../lib/Projects.json';
 
-type TProjectPageProps = {
+export interface ProjectType {
+    title: string;
+    logo: string;
+    logosmall: string;
+    background: string;
+    short: string;
+    long: string;
+    role: string;
+    setting: string;
+    duration: string;
+    deploy: string;
+    repository: string;
+    stack: string[];
+}
+
+type ProjectPageProps = {
 	currentProject: number,
 }
 
-export default function ProjectPage({ currentProject }: TProjectPageProps) {
-	const projects = JSON.parse(JSON.stringify(projectsData));
+export default function ProjectPage({ currentProject }: ProjectPageProps) {
+	const projects = JSON.parse(JSON.stringify(ProjectsData));
 	const minProjectSlide = 3;
 
 	return (
