@@ -63,7 +63,7 @@ export default function AboutPage() {
 					The desire to solve these problems fueled my transition into the dynamic world of coding.
 						<br />My career and educational background is summarized on my LinkedIn page, also on my resume.
 					</p>
-					<h3>Certificated by:</h3>
+					<h3 className='lg:block' hidden>Certificated by:</h3>
 					<div className='lg:grid grid-cols-2 items-center justify-center' hidden>
 						{ eduInstitutes.map((school, index) => (
 							<img
