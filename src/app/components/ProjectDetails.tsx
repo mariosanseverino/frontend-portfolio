@@ -15,15 +15,15 @@ type ProjectCardProps = {
 	stack: string[]
 }
 
-export default function ProjectCard({ title, card, setCard, long, role, setting, duration, deploy, repository, stack }: ProjectCardProps) {
-	const { currentSlide } = useBehaviorContext();	
+export default function ProjectDetails({ title, card, setCard, long, role, setting, duration, deploy, repository, stack }: ProjectCardProps) {
+	const { currentSlide } = useBehaviorContext();
 
 	const stackTags = stack.map((tech, index) => (
 		<span
-			key={ index }
+			key={index}
 			className='py-[0.1rem] px-3 bg-gray-300 rounded-xl'
 		>
-			{ tech }
+			{tech}
 		</span>
 	));
 
@@ -33,33 +33,33 @@ export default function ProjectCard({ title, card, setCard, long, role, setting,
 
 	return (
 		<section
-			id={ `projectcard-${ title.toLowerCase() }` }
-			className={ `z-20 bg-white text-black w-screen h-full py-[3rem] px-[2.3rem] rounded-t-3xl flex flex-col gap-[3rem] justify-between transition duration-500
-			${ card ? 'translate-y-[2.75rem] lg:translate-y-[4rem]' : 'translate-y-full opacity-0' }
+			id={`projectcard-${title.toLowerCase()}`}
+			className={`z-20 bg-white text-black w-screen h-full py-[3rem] px-[2.3rem] rounded-t-3xl flex flex-col gap-[3rem] justify-between transition duration-500
+			${card ? 'translate-y-[2.75rem] lg:translate-y-[4rem]' : 'translate-y-full opacity-0'}
 			lg:w-2/4`}
 		>
 			<div className='flex flex-col gap-4 relative'>
 				<div>
-					<h2 className='mb-4'>{ title }</h2>
-					<p><span className='font-bold leading-[1.17rem]'>Role:</span>{ ' ' + role }</p>
-					<p><span className='font-bold leading-[1.17rem]'>Setting:</span>{ ' ' + setting }</p>
-					<p><span className='font-bold leading-[1.17rem]'>Duration:</span>{ ' ' + duration }</p>
+					<h2 className='mb-4'>{title}</h2>
+					<p><span className='font-bold leading-[1.17rem]'>Role:</span>{' ' + role}</p>
+					<p><span className='font-bold leading-[1.17rem]'>Setting:</span>{' ' + setting}</p>
+					<p><span className='font-bold leading-[1.17rem]'>Duration:</span>{' ' + duration}</p>
 				</div>
-				<p className='leading-[1.17rem]'>{ long }</p>
+				<p className='leading-[1.17rem]'>{long}</p>
 				<div className='flex flex-wrap gap-1'>
-					{ stackTags }
+					{stackTags}
 				</div>
-				<button className='absolute -top-4 -right-2' onClick={ () => setCard(false) }>
+				<button className='absolute -top-4 -right-2' onClick={() => setCard(false)}>
 					<img src='/icons/close.png' alt="" />
 				</button>
 			</div>
-			{ deploy ? (
+			{deploy ? (
 				<div className='w-full flex flex-col justify-center items-center gap-4'>
 					<FullWidthBtn
 						title='Access deploy'
-						link={ deploy }
+						link={deploy}
 					/>
-					<a href={ repository }>
+					<a href={repository}>
 						<button className='flex underline'>
 							View repository
 						</button>
@@ -67,8 +67,8 @@ export default function ProjectCard({ title, card, setCard, long, role, setting,
 				</div>
 			) : <FullWidthBtn
 				title='View repository'
-				link={ repository }
-			/> }
+				link={repository}
+			/>}
 		</section>
 	);
 }

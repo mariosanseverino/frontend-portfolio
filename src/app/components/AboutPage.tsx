@@ -1,5 +1,6 @@
 import React from 'react';
 import FullWidthBtn from './FullWidthBtn';
+import timeline from '../lib/Timeline.json';
 
 export default function AboutPage() {
 	const techstack = ['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'C-Sharp'];
@@ -9,7 +10,7 @@ export default function AboutPage() {
 		<section
 			id='slide-2'
 			className={`swiper-slide bg-white text-black flex flex-col justify-between text-left
-			lg:grid lg:grid-cols-3 lg:gap-x-[3rem]` }
+			lg:grid lg:grid-cols-3 lg:gap-x-[5rem]` }
 		>
 			<div className={`h-full flex flex-col gap-4 justify-between
 			lg:w-[20rem]` }>
@@ -38,8 +39,8 @@ export default function AboutPage() {
 							))}
 						</div>
 						<p className='leading-[1.17rem]'>
-						I specialize in creating user-friendly UIs using UX-design techniques combined with coding. Not only that,
-						I have also explored back-end technologies like NodeJS and MySQL using layered architecture,
+						I specialize in creating user-friendly UIs using UX-design techniques combined with coding. 
+						I have also explored back-end technologies like NodeJS, Express and MySQL using layered architecture,
 						while taking advantage of unit and integration automated tests with libraries like RTL, Cypress and Jest.
 						</p>
 					</div>
@@ -63,7 +64,7 @@ export default function AboutPage() {
 					The desire to solve these problems fueled my transition into the dynamic world of coding.
 						<br />My career and educational background is summarized on my LinkedIn page, also on my resume.
 					</p>
-					<h3 className='lg:block' hidden>Certificated by:</h3>
+					<h3 className='lg:block' hidden>Certified by:</h3>
 					<div className='lg:grid grid-cols-2 items-center justify-center' hidden>
 						{ eduInstitutes.map((school, index) => (
 							<img
@@ -75,6 +76,18 @@ export default function AboutPage() {
 						)) }
 					</div>
 				</div>
+			</div>
+			<div className={`h-full hidden flex-col gap-4
+			lg:w-[20rem] lg:flex` }>
+				<h2 className='uppercase'>Career</h2>
+				<ul className='flex flex-col gap-4'>
+					{ timeline.map(({ year, event }) => (
+						<li key={ year } className='flex flex-col'>
+							<span className='font-bold'>{ year }</span>
+							{ event }
+						</li>
+					)) }
+				</ul>
 			</div>
 		</section>
 	);

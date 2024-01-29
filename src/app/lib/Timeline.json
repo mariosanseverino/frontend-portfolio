@@ -1,14 +1,10 @@
 [
-    { "year": 2010, "event": "Finished high school" },
-    { "year": 2012, "event": "Engineering, physics and hardware course" },
-    { "year": 2013, "event": "Enrolled business management" },
-    { "year": 2015, "event": "First job in marketing" },
-    { "year": 2016, "event": "Internship in financial planning" },
-    { "year": 2017, "event": "Changed to a graphic design internship" },
-    { "year": 2018, "event": "Graduation and moved to Sydney/AUS" },
+    { "year": 2023, "event": "Full-stack development bootcamp" },
+    { "year": 2021, "event": "Promotion to digital marketing analyst" },
+    { "year": 2020, "event": "Back to Brazil, and new job as marketing assistant at A Catarinense Tecidos" },
     { "year": 2019, "event": "Started studying HTML, CSS and JavaScript" },
-    { "year": 2020, "event": "Back to Brazil, new marketing job" },
-    { "year": 2021, "event": "Promotion to Digital Marketing Analyst" },
-    { "year": 2022, "event": "Full-stack development bootcamp" },
-    { "year": 2023, "event": "Completed the bootcamp" }
+    { "year": 2018, "event": "Graduation and moved to Sydney/AUS" },
+    { "year": 2017, "event": "New graphic design internship at JR Girl" },
+    { "year": 2015, "event": "First internship at Grupo RBS" },
+    { "year": 2013, "event": "Enrolled business management" }
 ]

@@ -1,17 +1,40 @@
 import React from 'react';
-import Project from './Project';
-import projectsData from '../lib/Projects.json';
+import ProjectThumb from './ProjectThumb';
+import ProjectsData from '../lib/Projects.json';
 
-type TProjectPageProps = {
+export interface ProjectType {
+    title: string;
+    logo: string;
+    logosmall: string;
+    background: string;
+    short: string;
+    long: string;
+    role: string;
+    setting: string;
+    duration: string;
+    deploy: string;
+    repository: string;
+    stack: string[];
+}
+
+type ProjectPageProps = {
 	currentProject: number,
 }
 
-export default function ProjectPage({ currentProject }: TProjectPageProps) {
-	const projects = JSON.parse(JSON.stringify(projectsData));
+export default function ProjectPage({ currentProject }: ProjectPageProps) {
+	const projects = JSON.parse(JSON.stringify(ProjectsData));
+	const minProjectSlide = 3;
 
 	return (
-		<section className='swiper-slide bg-black flex flex-col relative' id='slide-3'>
-			<h2 className='uppercase z-10'>Projects</h2>
+		<section
+			className='swiper-slide bg-black flex flex-col relative'
+			id={`slide-${minProjectSlide + currentProject}`}
+		>
+			<h2
+				className='uppercase z-10'
+			>
+				Projects
+			</h2>
 			<video
 				loop
 				muted
@@ -19,9 +42,12 @@ export default function ProjectPage({ currentProject }: TProjectPageProps) {
 				autoPlay
 				playsInline
 			>
-				<source src={projects[currentProject].background} type='video/mp4' />
+				<source
+					src={projects[currentProject].background}
+					type='video/mp4'
+				/>
 			</video>
-			<Project
+			<ProjectThumb
 				title={projects[currentProject].title}
 				short={projects[currentProject].short}
 				long={projects[currentProject].long}
