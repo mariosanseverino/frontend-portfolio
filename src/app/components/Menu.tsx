@@ -28,13 +28,12 @@ export default function Menu() {
 				}, 350*index);
 			});
 		}
-
 	}, [menu]);
 
 	return (
 		<>
 			<menu
-				className={ 'bg-black h-full w-full p-8 absolute top-0 left-0 flex flex-col justify-center gap-4 transition-opacity duration-1000 opacity-0' }	
+				className={ 'z-20 bg-black h-full w-full p-8 absolute top-0 left-0 flex flex-col justify-center gap-4 transition-opacity duration-1000 opacity-0' }	
 			>
 				<ul id='menu-list' className='h-full flex flex-col justify-center gap-2'>
 					{ menuOptions.map((option, index) => (

@@ -81,7 +81,7 @@ export default function AboutPage() {
 			lg:w-[20rem] lg:flex` }>
 				<h2 className='uppercase'>Career</h2>
 				<ul className='flex flex-col gap-4'>
-					{ timeline.toReversed().map(({ year, event }) => (
+					{ timeline.map(({ year, event }) => (
 						<li key={ year } className='flex flex-col'>
 							<span className='font-bold'>{ year }</span>
 							{ event }
