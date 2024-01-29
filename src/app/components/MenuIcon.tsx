@@ -1,18 +1,14 @@
 import React from 'react';
 import { useBehaviorContext } from '../context/BehaviorContext';
-import { useScrollBlock } from '../hooks/useScrollBlock';
 
 export default function MenuIcon() {
 	const { menu, setMenu } = useBehaviorContext();
-	const [blockScroll, allowScroll] = useScrollBlock();
 
 	function toggleMenu(menu: boolean) {
 		if (menu) {
 			setMenu(false);
-			allowScroll();
 		} else {
 			setMenu(true);
-			blockScroll();
 		}
 	}
 
