@@ -20,11 +20,7 @@ export default function Menu() {
 				menu.style.opacity = '100%';
 			}
 		}, 50);
-
-		if (menu) {
-			menu.classList;
-		}
-
+		
 		if (menuItem) {
 			menuItem.forEach((item, index) => {
 				setTimeout(() => {

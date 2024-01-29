@@ -3,8 +3,8 @@ import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function NavStatus() {
 	const { currentSlide } = useBehaviorContext();
-	const checkedStatusClass = 'w-1/3 h-1 bg-lightblue transition-colors duration-500';
-	const uncheckedStatusClass = 'w-1/3 h-1 bg-white transition-colors duration-500';
+	const checkedStatusClass = 'w-1/5 h-1 bg-lightblue transition-colors duration-500';
+	const uncheckedStatusClass = 'w-1/5 h-1 bg-white transition-colors duration-500';
 
 	function statusCheck(index: number) {
 		if (index === 0 || index === currentSlide || currentSlide > index) {
@@ -23,7 +23,6 @@ export default function NavStatus() {
 					key={ index } id={ id } className={ statusCheck(index) }
 				/>
 			)) }
-            
 		</section>
 	);
 }

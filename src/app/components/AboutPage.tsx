@@ -1,5 +1,6 @@
 import React from 'react';
 import FullWidthBtn from './FullWidthBtn';
+import timeline from '../lib/Timeline.json';
 
 export default function AboutPage() {
 	const techstack = ['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'C-Sharp'];
@@ -9,7 +10,7 @@ export default function AboutPage() {
 		<section
 			id='slide-2'
 			className={`swiper-slide bg-white text-black flex flex-col justify-between text-left
-			lg:grid lg:grid-cols-3 lg:gap-x-[3rem]` }
+			lg:grid lg:grid-cols-3 lg:gap-x-[5rem]` }
 		>
 			<div className={`h-full flex flex-col gap-4 justify-between
 			lg:w-[20rem]` }>
@@ -75,6 +76,18 @@ export default function AboutPage() {
 						)) }
 					</div>
 				</div>
+			</div>
+			<div className={`h-full hidden flex-col gap-4
+			lg:w-[20rem] lg:flex` }>
+				<h2 className='uppercase'>Career</h2>
+				<ul className='flex flex-col gap-4'>
+					{ timeline.toReversed().map(({ year, event }) => (
+						<li key={ year } className='flex flex-col'>
+							<span className='font-bold'>{ year }</span>
+							{ event }
+						</li>
+					)) }
+				</ul>
 			</div>
 		</section>
 	);
