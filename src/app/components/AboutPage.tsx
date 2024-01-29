@@ -38,8 +38,8 @@ export default function AboutPage() {
 							))}
 						</div>
 						<p className='leading-[1.17rem]'>
-						I specialize in creating user-friendly UIs using UX-design techniques combined with coding. Not only that,
-						I have also explored back-end technologies like NodeJS and MySQL using layered architecture,
+						I specialize in creating user-friendly UIs using UX-design techniques combined with coding. 
+						I have also explored back-end technologies like NodeJS, Express and MySQL using layered architecture,
 						while taking advantage of unit and integration automated tests with libraries like RTL, Cypress and Jest.
 						</p>
 					</div>
@@ -63,7 +63,7 @@ export default function AboutPage() {
 					The desire to solve these problems fueled my transition into the dynamic world of coding.
 						<br />My career and educational background is summarized on my LinkedIn page, also on my resume.
 					</p>
-					<h3 className='lg:block' hidden>Certificated by:</h3>
+					<h3 className='lg:block' hidden>Certified by:</h3>
 					<div className='lg:grid grid-cols-2 items-center justify-center' hidden>
 						{ eduInstitutes.map((school, index) => (
 							<img

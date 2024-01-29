@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function Menu() {
-	const { menu, setMenu, currentSlide, setCurrentSlide } = useBehaviorContext();
+	const { menu, setMenu, setCurrentSlide } = useBehaviorContext();
 	const menuOptions = ['home', 'about', 'projects'];
 
 	function handleMenuOption(index: number) {
@@ -44,7 +44,7 @@ export default function Menu() {
 					{ menuOptions.map((option, index) => (
 						<li
 							key={ index }
-							className={ `opacity-0 translate-y-full menu-item text-[2.3rem] uppercase cursor-pointer transition-all duration-500 ${ index === currentSlide ? 'text-lightblue' : ''}` }
+							className='opacity-0 translate-y-full menu-item text-[2.3rem] uppercase cursor-pointer transition-all duration-700'
 							onClick={ () => handleMenuOption(index) }>
 							{ option }
 						</li>
