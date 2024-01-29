@@ -21,6 +21,10 @@ export default function Menu() {
 			}
 		}, 50);
 
+		if (menu) {
+			menu.classList;
+		}
+
 		if (menuItem) {
 			menuItem.forEach((item, index) => {
 				setTimeout(() => {

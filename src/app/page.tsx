@@ -30,7 +30,9 @@ export default function Home() {
 	);
 	
 	const debouncedHandleWheel = useCallback(
-		(event: WheelEvent) => {
+		(event: WheelEvent) => {		
+			if (menu) return;
+
 			// Checks and prevents fast scrolling
 			if (!isScrolling) {
 				isScrolling = true;
@@ -41,7 +43,7 @@ export default function Home() {
 					isScrolling = false;
 				}, 1000);
 			}
-		}, [handleWheel]
+		}, [handleWheel, menu]
 	);
 
 	function onTouchStart (event: React.TouchEvent) {
@@ -59,6 +61,8 @@ export default function Home() {
 		const swipeUp = distance > minSwipeDistance;
 		const swipeDown = distance < -minSwipeDistance;
 		if (swipeUp || swipeDown) {
+			if (menu) return;
+
 			swipeDown ? setCurrentSlide((prevSlide) => {
 				return Math.max(prevSlide - 1, 0);
 			}) : setCurrentSlide((prevSlide) => {
