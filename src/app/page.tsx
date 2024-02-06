@@ -12,6 +12,7 @@ export default function Home() {
 	const [touchStart, setTouchStart] = useState<number | null>(null);
 	const [touchEnd, setTouchEnd] = useState<number | null>(null);
 	const minSwipeDistance = 50;
+	const isProject = currentSlide >= 2 && currentSlide < 5;
 	let isScrolling = false;
 
 	const handleWheel = useCallback(
@@ -92,7 +93,7 @@ export default function Home() {
 			onTouchEnd={ onTouchEnd }
 		>
 			<NavStatus />
-			{ (currentSlide >= 2 && currentSlide < 5) && <ProjectNavStatus /> }
+			{ isProject && <ProjectNavStatus /> }
 			<SwiperWrapper
 				currentSlide={ currentSlide }
 			/>

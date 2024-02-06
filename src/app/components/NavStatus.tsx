@@ -3,7 +3,7 @@ import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function NavStatus() {
 	const { currentSlide } = useBehaviorContext();
-	const checkedStatusClass = 'w-1/6 h-1 bg-lightblue transition-colors duration-500';
+	const checkedStatusClass = 'w-1/6 h-1 bg-blue transition-colors duration-500';
 	const uncheckedStatusClass = 'w-1/6 h-1 bg-white transition-colors duration-500';
 
 	function statusCheck(index: number) {

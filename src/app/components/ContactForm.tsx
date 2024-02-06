@@ -4,6 +4,9 @@ import { sendEmail } from '../utils/SendEmail';
 
 export default function ContactForm() {
 	const [formData, setFormData] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
 		subject: '',
 		message: ''
 	});
@@ -23,8 +26,11 @@ export default function ContactForm() {
 			await sendEmail(formData);
 
 			setFormData({
+				firstName: '',
+				lastName: '',
+				email: '',
 				subject: '',
-				message: '',
+				message: ''
 			});
     
 			window.alert('Email sent successfully');
@@ -34,9 +40,39 @@ export default function ContactForm() {
 	}
 
 	return(
-		<form className='w-full flex flex-col contact-form gap-4' onSubmit={ handleSubmit }>
-			<fieldset className='flex items-center gap-1'>
-				<label htmlFor='subject'>{'Subject: '}</label>
+		<form className='w-full justify-center flex flex-col contact-form gap-4 lg:w-1/4' onSubmit={ handleSubmit }>
+			<fieldset className='flex gap-2 w-full'>
+				<input
+					type='text'
+					name='firstname'
+					id='firstname'
+					placeholder='First name'
+					value={ formData.subject }
+					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
+				/>
+				<input
+					type='text'
+					name='lastname'
+					id='lastname'
+					placeholder='Last name'
+					value={ formData.subject }
+					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
+				/>
+			</fieldset>
+			<fieldset className='flex flex-col items-start gap-1 w-full'>
+				<input
+					type='text'
+					name='email'
+					id='email'
+					placeholder='youremail@domain.com'
+					value={ formData.subject }
+					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
+				/>
+			</fieldset>
+			<fieldset className='flex flex-col items-start gap-1 w-full'>
 				<input
 					type='text'
 					name='subject'
@@ -44,19 +80,21 @@ export default function ContactForm() {
 					placeholder='What&apos;s your message about?'
 					value={ formData.subject }
 					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
 				/>
 			</fieldset>
-			<fieldset>
-				<label htmlFor='message'>{'Message: '}</label>
+			<fieldset className='w-full flex flex-col gap-1'>
 				<textarea
 					name='message'
 					id='message'
 					placeholder='Tell me your story'
 					value={ formData.message }
 					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+					rows={5}
+					className='w-full px-3 py-3 rounded-xl bg-dark placeholder:text-silver'
 				/>
 			</fieldset>
-			<button type='submit' className='text-lightblue bg-white h-16 w-full rounded-[1.5rem]'>Send</button>
+			<button type='submit' className='text-white bg-blue h-16 w-full rounded-2xl'>Send message</button>
 		</form>
 	);
 }
