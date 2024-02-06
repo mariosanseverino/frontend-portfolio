@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProjectsData from '../lib/Projects.json';
 import { useBehaviorContext } from '../context/BehaviorContext';
 import { ProjectType } from './ProjectPage';
@@ -7,9 +7,21 @@ export default function ProjectNavStatus() {
 	const { setCurrentSlide } = useBehaviorContext();
 	const projects: ProjectType[] = Object.values(JSON.parse(JSON.stringify(ProjectsData)));
 	const minProjectIndex = 2;
+	
+	useEffect(() => {
+		setTimeout(() => {
+			const projNavStatus = document.getElementById('project-nav-status');
+			if (projNavStatus) {
+				projNavStatus.style.opacity = '100%';
+			}
+		}, 300);
+	}, []);
 
 	return (
-		<div className='hidden z-10 lg:flex flex-col gap-4 absolute right-16 top-1/2 -translate-y-1/2'>
+		<div
+			className='hidden z-10 lg:flex flex-col gap-4 absolute right-16 top-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-500'
+			id='project-nav-status'
+		>
 			{ projects.map((project, index) => (
 				<button
 					key={ index }

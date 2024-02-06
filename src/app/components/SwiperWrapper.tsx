@@ -3,6 +3,7 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import ProjectPage from './ProjectPage';
 import { TSwiperWrapperProps } from '../types/TSwiperWrapperProps';
+import ContactPage from './ContactPage';
 
 export default function SwiperWrapper({ currentSlide }: TSwiperWrapperProps) {
 	const cubicBezierValue = '.90,.02,.42,.94';
@@ -21,6 +22,7 @@ export default function SwiperWrapper({ currentSlide }: TSwiperWrapperProps) {
 				<ProjectPage currentProject={0} />
 				<ProjectPage currentProject={1} />
 				<ProjectPage currentProject={2} />
+				<ContactPage />
 			</section>
 		</section>
 	);
