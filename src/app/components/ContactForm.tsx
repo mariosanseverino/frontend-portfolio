@@ -40,61 +40,76 @@ export default function ContactForm() {
 	}
 
 	return(
-		<form className='w-full justify-center flex flex-col contact-form gap-4 lg:w-1/4' onSubmit={ handleSubmit }>
-			<fieldset className='flex gap-2 w-full'>
-				<input
-					type='text'
-					name='firstname'
-					id='firstname'
-					placeholder='First name'
-					value={ formData.subject }
-					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
-					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
-				/>
-				<input
-					type='text'
-					name='lastname'
-					id='lastname'
-					placeholder='Last name'
-					value={ formData.subject }
-					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
-					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
-				/>
-			</fieldset>
-			<fieldset className='flex flex-col items-start gap-1 w-full'>
-				<input
-					type='text'
-					name='email'
-					id='email'
-					placeholder='youremail@domain.com'
-					value={ formData.subject }
-					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
-					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
-				/>
-			</fieldset>
-			<fieldset className='flex flex-col items-start gap-1 w-full'>
-				<input
-					type='text'
-					name='subject'
-					id='subject'
-					placeholder='What&apos;s your message about?'
-					value={ formData.subject }
-					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
-					className='w-full px-3 py-2 rounded-xl bg-dark placeholder:text-silver'
-				/>
-			</fieldset>
-			<fieldset className='w-full flex flex-col gap-1'>
-				<textarea
-					name='message'
-					id='message'
-					placeholder='Tell me your story'
-					value={ formData.message }
-					onChange={ ({ target: { name, value } }) => handleForm(name, value) }
-					rows={5}
-					className='w-full px-3 py-3 rounded-xl bg-dark placeholder:text-silver'
-				/>
-			</fieldset>
-			<button type='submit' className='text-white bg-blue h-16 w-full rounded-2xl'>Send message</button>
-		</form>
+		<div className='flex flex-col h-full justify-center gap-8'>
+			<div>
+				<h2 className='uppercase'>Get in touch</h2>
+				<p>Let&apos;s connect & collaborate</p>
+			</div>
+			<form className='w-full justify-center flex flex-col contact-form gap-4' onSubmit={ handleSubmit }>
+				<fieldset className='flex gap-2 w-full'>
+					<input
+						type='text'
+						name='firstName'
+						id='firstName'
+						placeholder='First name'
+						value={ formData.firstName }
+						onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+						className='w-full px-3 py-2 bg-dark autofill:bg-dark placeholder:text-silver'
+						minLength={ 2 }
+						required
+					/>
+					<input
+						type='text'
+						name='lastName'
+						id='lastName'
+						placeholder='Last name'
+						value={ formData.lastName }
+						onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+						className='w-full px-3 py-2 bg-dark autofill:bg-dark placeholder:text-silver'
+						minLength={ 2 }
+						required
+					/>
+				</fieldset>
+				<fieldset className='flex flex-col items-start gap-1 w-full'>
+					<input
+						type='email'
+						name='email'
+						id='email'
+						placeholder='youremail@domain.com'
+						value={ formData.email }
+						onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+						className='w-full px-3 py-2 bg-dark autofill:bg-dark placeholder:text-silver'
+						pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
+						required
+					/>
+				</fieldset>
+				<fieldset className='flex flex-col items-start gap-1 w-full'>
+					<input
+						type='text'
+						name='subject'
+						id='subject'
+						placeholder='What&apos;s your message about?'
+						value={ formData.subject }
+						onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+						className='w-full px-3 py-2 bg-dark autofill:bg-dark placeholder:text-silver'
+						minLength={ 2 }
+						required
+					/>
+				</fieldset>
+				<fieldset className='w-full flex flex-col gap-1'>
+					<textarea
+						name='message'
+						id='message'
+						placeholder='Tell me your story'
+						value={ formData.message }
+						onChange={ ({ target: { name, value } }) => handleForm(name, value) }
+						rows={5}
+						className='w-full px-3 py-3 bg-dark placeholder:text-silver'
+						required
+					/>
+				</fieldset>
+				<button type='submit' className='text-white full-width-btn h-16 w-full rounded-full'>Send message</button>
+			</form>
+		</div>
 	);
 }

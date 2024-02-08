@@ -10,7 +10,7 @@ export default function FullWidthBtn({ title, link, click }: FullWidthBtnProps) 
 	return (
 		<a href={ link } target='_blank' rel='noreferrer' className='w-full'>
 			<button
-				className={`text-white h-16 w-full rounded-[1.5rem] z-50
+				className={`text-white h-16 w-full rounded-full z-50
 				full-width-btn` }
 				onClick={ click ? click : () => {} }
 			>
