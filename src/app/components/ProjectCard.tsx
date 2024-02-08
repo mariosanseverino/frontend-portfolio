@@ -38,7 +38,7 @@ export default function ProjectCard({ title, logo, short, long, role, setting, d
 					setDetails={ setDetails }
 				/>
 			</div>
-			{ isProject && <ProjectDetails
+			{/* { isProject && <ProjectDetails
 				title={title}
 				card={details}
 				setCard={setDetails}
@@ -49,7 +49,7 @@ export default function ProjectCard({ title, logo, short, long, role, setting, d
 				deploy={deploy ? deploy : undefined}
 				repository={repository}
 				stack={stack}
-			/> }
+			/> } */}
 		</section>
 	);
 }
