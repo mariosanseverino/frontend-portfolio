@@ -4,7 +4,7 @@ import ContactForm from './ContactForm';
 export default function ContactPage() {
 	return (
 		<section
-			className={ `swiper-slide z-30 flex flex-col bg-black text-white
+			className={ `swiper-slide z-31 flex flex-col bg-black text-white
 			lg:grid grid-cols-3 lg:gap-32 lg:relative` }
 			id='slide-6'
 		>
