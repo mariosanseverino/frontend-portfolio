@@ -1,20 +1,20 @@
 import React from 'react';
-import ProjectThumb from './ProjectThumb';
+import ProjectCard from './ProjectCard';
 import ProjectsData from '../lib/Projects.json';
 
 export interface ProjectType {
-    title: string;
-    logo: string;
-    logosmall: string;
-    background: string;
-    short: string;
-    long: string;
-    role: string;
-    setting: string;
-    duration: string;
-    deploy: string;
-    repository: string;
-    stack: string[];
+	title: string;
+	logo: string;
+	logosmall: string;
+	background: string;
+	short: string;
+	long: string;
+	role: string;
+	setting: string;
+	duration: string;
+	deploy: string;
+	repository: string;
+	stack: string[];
 }
 
 type ProjectPageProps = {
@@ -47,7 +47,7 @@ export default function ProjectPage({ currentProject }: ProjectPageProps) {
 					type='video/mp4'
 				/>
 			</video>
-			<ProjectThumb
+			<ProjectCard
 				title={projects[currentProject].title}
 				short={projects[currentProject].short}
 				long={projects[currentProject].long}

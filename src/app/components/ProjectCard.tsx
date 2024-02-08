@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ViewMoreBtn from './ViewMoreBtn';
 import ProjectDetails from './ProjectDetails';
+import { useBehaviorContext } from '../context/BehaviorContext';
 
 type ProjectsProps = {
 	title: string,
@@ -15,8 +16,10 @@ type ProjectsProps = {
 	stack: string[],
 }
 
-export default function ProjectThumb({ title, logo, short, long, role, setting, duration, stack, deploy, repository }: ProjectsProps) {
-	const [card, setCard] = useState(false);
+export default function ProjectCard({ title, logo, short, long, role, setting, duration, stack, deploy, repository }: ProjectsProps) {
+	const { currentSlide } = useBehaviorContext();
+	const [details, setDetails] = useState(false);
+	const isProject = currentSlide >= 2 && currentSlide < 5;
 
 	return (
 		<section
@@ -32,13 +35,13 @@ export default function ProjectThumb({ title, logo, short, long, role, setting, 
 					{short}
 				</p>
 				<ViewMoreBtn
-					setCard={setCard}
+					setDetails={ setDetails }
 				/>
 			</div>
-			<ProjectDetails
+			{ isProject && <ProjectDetails
 				title={title}
-				card={card}
-				setCard={setCard}
+				card={details}
+				setCard={setDetails}
 				long={long}
 				role={role}
 				setting={setting}
@@ -46,7 +49,7 @@ export default function ProjectThumb({ title, logo, short, long, role, setting, 
 				deploy={deploy ? deploy : undefined}
 				repository={repository}
 				stack={stack}
-			/>
+			/> }
 		</section>
 	);
 }

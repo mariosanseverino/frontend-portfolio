@@ -4,12 +4,17 @@ import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function Menu() {
 	const { menu, setMenu, setCurrentSlide } = useBehaviorContext();
-	const menuOptions = ['home', 'about', 'projects'];
+	const menuOptions = ['home', 'about', 'projects', 'contact'];
 
-	function handleMenuOption(index: number) {
-		setCurrentSlide(index);
-		setMenu(false);
-	}
+	const handleMenuOption = (option: string, index: number) => {
+		if (option === 'contact') {
+			setCurrentSlide(5);
+			setMenu(false);
+		} else {
+			setCurrentSlide(index);
+			setMenu(false);
+		}
+	};
 
 	useEffect(() => {
 		const menu = document.querySelector('menu');
@@ -40,7 +45,7 @@ export default function Menu() {
 						<li
 							key={ index }
 							className='opacity-0 translate-y-full menu-item text-[2.3rem] uppercase cursor-pointer transition-all duration-700'
-							onClick={ () => handleMenuOption(index) }>
+							onClick={ () => handleMenuOption(option, index) }>
 							{ option }
 						</li>
 					)) }

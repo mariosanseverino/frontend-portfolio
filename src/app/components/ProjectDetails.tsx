@@ -21,7 +21,7 @@ export default function ProjectDetails({ title, card, setCard, long, role, setti
 	const stackTags = stack.map((tech, index) => (
 		<span
 			key={index}
-			className='py-[0.1rem] px-3 bg-gray-300 rounded-xl'
+			className='py-[0.1rem] px-3 bg-gray rounded-xl'
 		>
 			{tech}
 		</span>

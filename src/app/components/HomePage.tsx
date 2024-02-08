@@ -5,7 +5,10 @@ export default function HomePage() {
 	const { setCurrentSlide } = useBehaviorContext();
 
 	return (
-		<section className='swiper-slide flex flex-col h-full justify-between bg-lightblue text-white gradient lg:relative' id='slide-1'>
+		<section
+			className='swiper-slide flex flex-col h-full justify-between bg-blue text-white gradient lg:relative'
+			id='slide-1'
+		>
 			<div className='lg:absolute lg:left-16 lg:top-16'>
 				<h1 id='slide1-title'>Hi!</h1>
 				<h1>Welcome to my <br/>portfolio <span className='wave'>👋</span></h1>

@@ -1,12 +1,12 @@
 import React, { Dispatch, SetStateAction } from 'react';
 
 type ViewMoreBtnProps = {
-	setCard: Dispatch<SetStateAction<boolean>>,
+	setDetails: Dispatch<SetStateAction<boolean>>,
 }
 
-export default function ViewMoreBtn({ setCard }: ViewMoreBtnProps) {
+export default function ViewMoreBtn({ setDetails }: ViewMoreBtnProps) {
 	function openProjectCard() {
-		setCard(true);
+		setDetails(true);
 	}
 
 	return (
