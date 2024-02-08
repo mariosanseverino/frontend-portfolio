@@ -40,13 +40,13 @@ export default function ContactForm() {
 	}
 
 	return(
-		<div className='flex flex-col h-full justify-center gap-8'>
+		<div className='flex flex-col h-full justify-center gap-4'>
 			<div>
 				<h2>Get in touch</h2>
 				<p>Let&apos;s connect & collaborate</p>
 			</div>
-			<form className='w-full justify-center flex flex-col contact-form gap-2 lg:gap-4' onSubmit={ handleSubmit }>
-				<fieldset className='flex gap-2 lg:gap-4 w-full'>
+			<form className='w-full justify-center flex flex-col contact-form gap-4' onSubmit={ handleSubmit }>
+				<fieldset className='flex gap-4 w-full'>
 					<input
 						type='text'
 						name='firstName'
