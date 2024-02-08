@@ -38,7 +38,7 @@ export default function ProjectPage({ currentProject }: ProjectPageProps) {
 			<video
 				loop
 				muted
-				className='opacity-60 object-cover w-screen h-screen absolute top-0 left-0'
+				className='opacity-60 object-cover w-screen h-full absolute top-0 left-0'
 				autoPlay
 				playsInline
 			>
