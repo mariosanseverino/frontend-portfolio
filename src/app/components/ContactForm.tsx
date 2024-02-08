@@ -42,11 +42,11 @@ export default function ContactForm() {
 	return(
 		<div className='flex flex-col h-full justify-center gap-8'>
 			<div>
-				<h2 className='uppercase'>Get in touch</h2>
+				<h2>Get in touch</h2>
 				<p>Let&apos;s connect & collaborate</p>
 			</div>
 			<form className='w-full justify-center flex flex-col contact-form gap-4' onSubmit={ handleSubmit }>
-				<fieldset className='flex gap-2 w-full'>
+				<fieldset className='flex gap-4 w-full'>
 					<input
 						type='text'
 						name='firstName'
@@ -103,7 +103,7 @@ export default function ContactForm() {
 						placeholder='Tell me your story'
 						value={ formData.message }
 						onChange={ ({ target: { name, value } }) => handleForm(name, value) }
-						rows={5}
+						rows={ 2 }
 						className='w-full px-3 py-3 bg-dark placeholder:text-silver'
 						required
 					/>
