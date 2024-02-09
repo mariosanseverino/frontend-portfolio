@@ -2,21 +2,23 @@ import React from 'react';
 import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function HomePage() {
-	const { setCurrentSlide } = useBehaviorContext();
+	const { currentSlide, setCurrentSlide } = useBehaviorContext();
 
 	return (
 		<section
 			className='swiper-slide flex flex-col h-full justify-between bg-blue text-white gradient lg:relative'
 			id='slide-1'
 		>
-			<div className='lg:absolute lg:left-16 lg:top-16'>
+			<div className={ `lg:absolute lg:left-16 lg:top-16 transition-all duration-1000
+			${ currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-2/4 opacity-0' }` }>
 				<h1 id='slide1-title'>Hi!</h1>
 				<h1>Welcome to my <br/>portfolio <span className='wave'>👋</span></h1>
 			</div>
 			<div
 				id='author'
-				className={ `flex flex-col gap-4 w-full
-				lg:flex-row lg:items-center lg:justify-center lg:h-full` }
+				className={ `flex flex-col gap-4 w-full transition-all duration-1000
+				lg:flex-row lg:items-center lg:justify-center lg:h-full
+				${ currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-2/4 opacity-0' }` }
 			>
 				<img
 					src='/images/profilepic.jpeg'
