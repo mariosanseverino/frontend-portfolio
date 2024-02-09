@@ -15,14 +15,14 @@ export default function ContactPage() {
 				<ContactForm />
 			</section>
 			<section className={ `lg:h-full flex flex-col justify-center lg:gap-10 transition-all duration-1000
-			${ currentSlide === 5 ? 'translate-y-100 opacity-100' : 'translate-y-full opacity-0' }` }>
+			${ currentSlide < 5 ? '-translate-y-64 opacity-0' : 'translate-y-0 opacity-100' }` }>
 				<div className='hidden lg:flex flex-col gap-4'>
 					<div className='flex gap-4'>
 						<h3>Feedback</h3>
 						<svg className='w-[1.5rem] transition-transform duration-300 lg:hover:scale-105' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d='M6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM4 18.3851L5.76282 17H20V5H4V18.3851ZM11 13H13V15H11V13ZM11 7H13V12H11V7Z'></path></svg>
 					</div>
 					<p>Your feedback is much valued.
-					Listening to others is a crucial step in shaping the future of my career.
+					Listening to others is crucial in shaping my professional path.
 					</p>
 				</div>
 				<div className='hidden lg:flex flex-col gap-4'>
@@ -32,7 +32,7 @@ export default function ContactPage() {
 					</div>
 					<p>
 						I am open to new opportunities!
-						Feel free to reach out if you have any opportunity that you think I could contribute with my skills.
+						Feel free to reach out if you have any project that you think I could contribute with my skills.
 					</p>
 				</div>
 				<div className='flex flex-col gap-2'>
@@ -43,11 +43,13 @@ export default function ContactPage() {
 					<p>
 						Contact me via email, Whatsapp, LinkedIn or send me a message through the form.
 					</p>
-					<a href='mailto:marioaugusto.sanseverino@gmail.com' className='underline' rel='noreferrer'>
+					<a href='mailto:marioaugusto.sanseverino@gmail.com' className='underline flex' rel='noreferrer'>
 						marioaugusto.sanseverino@gmail.com
+						<img src='/icons/arrow-right-up.svg' className='invert w-6' alt='Arrow' />
 					</a>
-					<a target='_blank' href='https://wa.me/5551997956402' className='underline' rel="noreferrer">
+					<a target='_blank' href='https://wa.me/5551997956402' className='underline flex' rel="noreferrer">
 						+55 51 997956402
+						<img src='/icons/arrow-right-up.svg' className='invert w-6' alt='Arrow' />
 					</a>
 				</div>
 			</section>
