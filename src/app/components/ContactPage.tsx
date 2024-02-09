@@ -15,7 +15,7 @@ export default function ContactPage() {
 				<ContactForm />
 			</section>
 			<section className={ `lg:h-full flex flex-col justify-center lg:gap-10 transition-all duration-1000
-			${ currentSlide === 5 ? 'translate-y-100 opacity-100' : 'translate-y-2/4 opacity-0' }` }>
+			${ currentSlide === 5 ? 'translate-y-100 opacity-100' : 'translate-y-full opacity-0' }` }>
 				<div className='hidden lg:flex flex-col gap-4'>
 					<div className='flex gap-4'>
 						<h3>Feedback</h3>

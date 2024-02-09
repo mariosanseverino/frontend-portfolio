@@ -9,7 +9,7 @@ export default function AboutMeSection() {
 	return (
 		<div className={ `h-full flex flex-col gap-4 justify-between
         lg:w-[20rem] lg:justify-start transition-all duration-1000
-		${ currentSlide === 1 ? 'translate-y-0 opacity-100' : 'translate-y-2/4 opacity-0' }` }>
+		${ currentSlide === 1 ? 'translate-y-0 opacity-100' : 'translate-y-1/4 opacity-0' }` }>
 			<div className='flex flex-col gap-4'>
 				<div className='flex flex-col gap-4'>
 					<h2 className='uppercase'>About me</h2>
