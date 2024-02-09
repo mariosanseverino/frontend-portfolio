@@ -19,9 +19,9 @@ export default function SwiperWrapper({ currentSlide }: TSwiperWrapperProps) {
 			<section id="swiper-wrapper" className='bg-black' style={ wrapperStyle }>
 				<HomePage />
 				<AboutPage />
-				<ProjectPage currentProject={0} />
-				<ProjectPage currentProject={1} />
-				<ProjectPage currentProject={2} />
+				<ProjectPage projectIndex={0} />
+				<ProjectPage projectIndex={1} />
+				<ProjectPage projectIndex={2} />
 				<ContactPage />
 			</section>
 		</section>

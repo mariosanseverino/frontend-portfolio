@@ -18,17 +18,17 @@ export interface ProjectType {
 }
 
 type ProjectPageProps = {
-	currentProject: number,
+	projectIndex: number,
 }
 
-export default function ProjectPage({ currentProject }: ProjectPageProps) {
+export default function ProjectPage({ projectIndex }: ProjectPageProps) {
 	const projects = JSON.parse(JSON.stringify(ProjectsData));
 	const minProjectSlide = 3;
 
 	return (
 		<section
 			className='swiper-slide bg-black flex flex-col relative'
-			id={`slide-${minProjectSlide + currentProject}`}
+			id={`slide-${minProjectSlide + projectIndex}`}
 		>
 			<h2
 				className='uppercase z-10'
@@ -43,21 +43,22 @@ export default function ProjectPage({ currentProject }: ProjectPageProps) {
 				playsInline
 			>
 				<source
-					src={projects[currentProject].background}
+					src={projects[projectIndex].background}
 					type='video/mp4'
 				/>
 			</video>
 			<ProjectCard
-				title={projects[currentProject].title}
-				short={projects[currentProject].short}
-				long={projects[currentProject].long}
-				role={projects[currentProject].role}
-				setting={projects[currentProject].setting}
-				duration={projects[currentProject].duration}
-				logo={projects[currentProject].logo}
-				deploy={projects[currentProject].deploy}
-				repository={projects[currentProject].repository}
-				stack={projects[currentProject].stack}
+				index={projectIndex}
+				title={projects[projectIndex].title}
+				short={projects[projectIndex].short}
+				long={projects[projectIndex].long}
+				role={projects[projectIndex].role}
+				setting={projects[projectIndex].setting}
+				duration={projects[projectIndex].duration}
+				logo={projects[projectIndex].logo}
+				deploy={projects[projectIndex].deploy}
+				repository={projects[projectIndex].repository}
+				stack={projects[projectIndex].stack}
 			/>
 		</section>
 	);

@@ -16,6 +16,10 @@ const config: Config = {
 				silver: '#9CA3AF',
 				gray: '#D1D5DB'
 
+			},
+			transitionDuration: {
+				'1500': '1500ms',
+				'2000': '2000ms',
 			}
 		},
 	},
