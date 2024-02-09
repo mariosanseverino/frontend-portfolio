@@ -1,12 +1,15 @@
 import React from 'react';
 import FullWidthBtn from './FullWidthBtn';
+import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function AboutMeSection() {
+	const { currentSlide } = useBehaviorContext();
 	const techstack = ['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'C-Sharp'];
 
 	return (
-		<div className={`h-full flex flex-col gap-4 justify-between
-        lg:w-[20rem] lg:justify-start` }>
+		<div className={ `h-full flex flex-col gap-4 justify-between
+        lg:w-[20rem] lg:justify-start transition-all duration-1000
+		${ currentSlide === 1 ? 'translate-y-100 opacity-100' : 'translate-y-2/4 opacity-0' }` }>
 			<div className='flex flex-col gap-4'>
 				<div className='flex flex-col gap-4'>
 					<h2 className='uppercase'>About me</h2>

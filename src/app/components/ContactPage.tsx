@@ -1,7 +1,10 @@
 import React from 'react';
 import ContactForm from './ContactForm';
+import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function ContactPage() {
+	const { currentSlide } = useBehaviorContext();
+
 	return (
 		<section
 			className='swiper-slide bg-black flex flex-col justify-between lg:grid grid-cols-3 lg:gap-32 lg:relative'
@@ -11,7 +14,8 @@ export default function ContactPage() {
 				<h2 className='uppercase'>Contact</h2>
 				<ContactForm />
 			</section>
-			<section className='lg:h-full flex flex-col justify-center lg:gap-10'>
+			<section className={ `lg:h-full flex flex-col justify-center lg:gap-10 transition-all duration-1000
+			${ currentSlide === 5 ? 'translate-y-100 opacity-100' : 'translate-y-2/4 opacity-0' }` }>
 				<div className='hidden lg:flex flex-col gap-4'>
 					<div className='flex gap-4'>
 						<h3>Feedback</h3>

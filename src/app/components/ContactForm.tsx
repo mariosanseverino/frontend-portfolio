@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import { sendEmail } from '../utils/SendEmail';
+import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function ContactForm() {
+	const { currentSlide } = useBehaviorContext();
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
@@ -40,7 +42,8 @@ export default function ContactForm() {
 	}
 
 	return(
-		<div className='flex flex-col h-full justify-center gap-4'>
+		<div className={ `flex flex-col h-full justify-center gap-4 transition-all duration-1000
+		${ currentSlide === 5 ? 'translate-y-100 opacity-100' : 'translate-y-2/4 opacity-0' }`} >
 			<div>
 				<h2>Get in touch</h2>
 				<p>Let&apos;s connect & collaborate</p>
