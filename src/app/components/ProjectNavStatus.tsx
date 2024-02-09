@@ -4,18 +4,18 @@ import { useBehaviorContext } from '../context/BehaviorContext';
 import { ProjectType } from './ProjectPage';
 
 export default function ProjectNavStatus() {
-	const { setCurrentSlide } = useBehaviorContext();
+	const { currentSlide, setCurrentSlide } = useBehaviorContext();
 	const projects: ProjectType[] = Object.values(JSON.parse(JSON.stringify(ProjectsData)));
 	const minProjectIndex = 2;
 	
 	useEffect(() => {
+		const projNavStatus = document.getElementById('project-nav-status');
 		setTimeout(() => {
-			const projNavStatus = document.getElementById('project-nav-status');
 			if (projNavStatus) {
 				projNavStatus.style.opacity = '100%';
 			}
 		}, 300);
-	}, []);
+	}, [currentSlide]);
 
 	return (
 		<div

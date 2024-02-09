@@ -43,7 +43,7 @@ export default function ContactForm() {
 
 	return(
 		<div className={ `flex flex-col h-full justify-center gap-4 transition-all duration-1000
-		${ currentSlide === 5 ? 'translate-y-100 opacity-100' : 'translate-y-2/4 opacity-0' }`} >
+		${ currentSlide < 5 ? '-translate-y-64 opacity-0' : 'translate-y-0 opacity-100' }`} >
 			<div>
 				<h2>Get in touch</h2>
 				<p>Let&apos;s connect & collaborate</p>

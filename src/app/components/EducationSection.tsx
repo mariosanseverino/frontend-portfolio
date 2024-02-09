@@ -7,8 +7,9 @@ export default function EducationSection() {
 
 	return (
 		<div className={`flex flex-col gap-4 justify-between transition-all duration-1000
-		${ currentSlide === 1 ? 'translate-y-0 opacity-100' : 'translate-y-2/4 opacity-0' }
-        lg:w-[20rem]` }>
+		${ currentSlide === 1 ? 'translate-y-0 opacity-100' : currentSlide < 1 ? '-translate-y-16 opacity-0' : 'translate-y-64 opacity-0' }
+		lg:w-[20rem]` }
+		>
 			<div className='flex flex-col gap-4'>
 				<h2 className='uppercase lg:block' hidden>Education</h2>
 				<p className='leading-[1.17rem] mb-2 lg:block' hidden>

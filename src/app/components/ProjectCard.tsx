@@ -26,7 +26,7 @@ export default function ProjectCard({ index, title, logo, short, long, role, set
 	return (
 		<section
 			className={`h-full z-10 relative flex flex-col items-center justify-end transition-all duration-1000
-			${ isCurrentProject ? 'translate-y-0 opacity-100' : 'translate-y-2/4 opacity-0' }`}
+			${ isCurrentProject ? 'translate-y-0 opacity-100' : currentSlide < (index + 2) ? '-translate-y-64 opacity-0' : 'translate-y-64 opacity-0' }`}
 		>
 			<div className='absolute top-1/2 -translate-y-1/2 flex flex-col items-center gap-4'>
 				<img
