@@ -9,7 +9,7 @@ type sendEmailProps = {
     message: string,
 }
 
-const resend = new Resend('re_DhcSAnUe_2QdEpaWtd87fihG5j9Txiaeg');
+const resend = new Resend(process.env.RESEND_API_KEY);
     
 export async function sendEmail({ firstName, lastName, email, subject, message }: sendEmailProps) {
 	await resend.emails.send({
