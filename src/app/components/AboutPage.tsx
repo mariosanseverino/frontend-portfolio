@@ -11,7 +11,6 @@ export default function AboutPage() {
 			className={`swiper-slide bg-white text-black flex flex-col justify-between text-left
 			lg:grid lg:grid-cols-3 lg:gap-x-[5rem]` }
 		>
-			<h2 className='uppercase'>About me</h2>
 			<AboutMeSection />
 			<EducationSection />
 			<CareerSection />
