@@ -4,7 +4,7 @@ import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function Menu() {
 	const { menu, setMenu, setCurrentSlide } = useBehaviorContext();
-	const menuOptions = ['home', 'about', 'projects', 'contact'];
+	const menuOptions = ['home', 'about me', 'projects', 'contact'];
 
 	const handleMenuOption = (option: string, index: number) => {
 		if (option === 'contact') {

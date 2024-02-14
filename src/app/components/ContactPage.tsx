@@ -7,14 +7,15 @@ export default function ContactPage() {
 
 	return (
 		<section
-			className='swiper-slide bg-black flex flex-col justify-between lg:grid grid-cols-3 lg:gap-32 lg:relative'
+			className='swiper-slide bg-black flex flex-col justify-between lg:flex-row lg:justify-center lg:gap-16 lg:relative'
 			id='slide-6'
 		>
-			<section className='h-full flex flex-col justify-center'>
-				<h2 className='uppercase transition-none'>Contact</h2>
+			<h2 className='uppercase transition-none lg:fixed lg:left-16'>Contact</h2>
+			<section className='h-full flex flex-col justify-center lg:w-1/3'>
 				<ContactForm />
 			</section>
-			<section className={ `lg:h-full flex flex-col justify-center lg:gap-10 transition-all duration-1000
+			<section className={ `flex flex-col justify-center transition-all duration-1000
+			lg:h-full lg:gap-16 lg:w-1/3
 			${ currentSlide < 5 ? '-translate-y-64 opacity-0' : 'translate-y-0 opacity-100' }` }>
 				<div className='hidden lg:flex flex-col gap-4'>
 					<div className='flex gap-4'>

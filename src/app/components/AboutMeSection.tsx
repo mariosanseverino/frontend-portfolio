@@ -11,9 +11,8 @@ export default function AboutMeSection() {
         lg:w-[20rem] lg:justify-start transition-all duration-1000
 		${ currentSlide === 1 ? 'translate-y-0 opacity-100' : currentSlide < 1 ? '-translate-y-16 opacity-0' : 'translate-y-64 opacity-0' }` }
 		>
-			<div className='flex flex-col gap-4'>
+			<div className='flex flex-col gap-4 mt-4'>
 				<div className='flex flex-col gap-4'>
-					<h2 className='uppercase'>About me</h2>
 					<p className='leading-[1.17rem]'>
                     I&apos;m a junior <strong>Front-end Developer</strong>, with long years of experience in different areas,
                     such as a Graphic Designer and as a Digital Marketing Analyst, ultimately finding my passion in Web Development.
