@@ -36,7 +36,7 @@ export default function ProjectDetails({ title, card, setCard, long, role, setti
 			id={`projectcard-${title.toLowerCase()}`}
 			className={`absolute top-0 left-1/2 -translate-x-1/2 bg-white text-black w-screen h-full py-[3rem] px-[2.3rem] rounded-t-3xl flex flex-col justify-between transition duration-500
 			${card ? 'translate-y-[4rem] lg:translate-y-[4rem]' : 'translate-y-full opacity-0'}
-			lg:w-96`}
+			lg:w-[32rem]`}
 		>
 			<div className='flex flex-col gap-4 relative'>
 				<div>
