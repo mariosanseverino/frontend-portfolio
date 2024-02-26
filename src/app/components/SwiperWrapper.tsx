@@ -2,8 +2,11 @@ import React from 'react';
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import ProjectPage from './ProjectPage';
-import { TSwiperWrapperProps } from '../types/TSwiperWrapperProps';
 import ContactPage from './ContactPage';
+
+type TSwiperWrapperProps = {
+    currentSlide: number,
+}
 
 export default function SwiperWrapper({ currentSlide }: TSwiperWrapperProps) {
 	const cubicBezierValue = '.90,.02,.42,.94';
