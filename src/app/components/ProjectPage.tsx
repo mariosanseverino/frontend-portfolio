@@ -27,11 +27,11 @@ export default function ProjectPage({ projectIndex }: ProjectPageProps) {
 
 	return (
 		<section
-			className='swiper-slide bg-black flex flex-col relative'
+			className='swiper-slide bg-black flex flex-col justify-center relative'
 			id={`slide-${minProjectSlide + projectIndex}`}
 		>
 			<h2
-				className='uppercase z-10'
+				className='uppercase z-10 absolute top-16 lg:left-16'
 			>
 				Projects
 			</h2>

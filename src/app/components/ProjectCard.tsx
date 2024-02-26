@@ -21,14 +21,15 @@ export default function ProjectCard({ index, title, logo, short, long, role, set
 	const { currentSlide } = useBehaviorContext();
 	const [details, setDetails] = useState(false);
 	const isProject = currentSlide >= 2 && currentSlide < 5;
-	const isCurrentProject = currentSlide === (index + 2) ? true : false;
+	const isCurrentProject = currentSlide === index + 2;
+	const fromBottom = (index + 2) > currentSlide;
 
 	return (
 		<section
-			className={`h-full z-10 relative flex flex-col items-center justify-end transition-all duration-1000
-			${ isCurrentProject ? 'translate-y-0 opacity-100' : currentSlide < (index + 2) ? '-translate-y-64 opacity-0' : 'translate-y-64 opacity-0' }`}
+			className='z-10 h-full relative'
 		>
-			<div className='absolute top-1/2 -translate-y-1/2 flex flex-col items-center gap-4'>
+			<div className={ `w-full flex flex-col items-center gap-4 absolute top-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000
+			${ isCurrentProject ? '-translate-y-1/2 opacity-100' : fromBottom ? '-translate-y-96 opacity-0' : 'translate-y-64 opacity-0' }`}>
 				<img
 					src={logo}
 					className='w-[11.375rem] z-10 lg:w-[15rem]'
