@@ -28,19 +28,21 @@ export default function ProjectCard({ index, title, logo, short, long, role, set
 		<section
 			className='z-10 h-full relative'
 		>
-			<div className={ `w-full flex flex-col items-center gap-8 absolute top-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000
+			<div className={ `w-full h-full flex flex-col items-center justify-center gap-16 absolute top-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000
 			${ isCurrentProject ? '-translate-y-1/2 opacity-100' : fromBottom ? '-translate-y-96 opacity-0' : 'translate-y-64 opacity-0' }`}>
 				<img
 					src={logo}
-					className='w-[11.375rem] z-10 lg:w-[15rem]'
+					className='w-[11.375rem] z-10 lg:w-[15rem] justify-self-center'
 					alt={`${title} logo`}
 				/>
-				<p className='project-description'>
-					{short}
-				</p>
-				<ViewMoreBtn
-					setDetails={ setDetails }
-				/>
+				<div className='flex flex-col items-center gap-2'>
+					<p className='project-description'>
+						{short}
+					</p>
+					<ViewMoreBtn
+						setDetails={ setDetails }
+					/>
+				</div>
 			</div>
 			{ isProject && <ProjectDetails
 				title={title}
