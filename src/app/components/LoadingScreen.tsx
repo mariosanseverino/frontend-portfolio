@@ -27,7 +27,7 @@ export default function LoadingScreen() {
 	return (
 		<section
 			id='loading-screen'
-			className={ `z-50 fixed opacity-20 top-16 right-8 w-screen h-screen bg-blue flex justify-end items-start
+			className={ `z-50 fixed top-16 right-8 w-screen h-screen bg-blue flex justify-end items-start
 			lg:right-16` }
 		>
 			<img src='/icons/loading.svg' alt='Loading icon' className='w-[1.75em]' />
