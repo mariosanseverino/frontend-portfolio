@@ -26,7 +26,7 @@ export default function ProjectCard({ index, title, logo, short, long, role, set
 
 	return (
 		<section
-			className='z-10 h-full relative overflow-hidden'
+			className='z-10 h-full relative'
 		>
 			<div className={ `w-full flex flex-col items-center gap-8 absolute top-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000
 			${ isCurrentProject ? '-translate-y-1/2 opacity-100' : fromBottom ? '-translate-y-96 opacity-0' : 'translate-y-64 opacity-0' }`}>
