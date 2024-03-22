@@ -5,7 +5,7 @@ import { useBehaviorContext } from '../context/BehaviorContext';
 
 export default function ContactForm() {
 	const { currentSlide } = useBehaviorContext();
-	const isContactSlide = currentSlide < 5;
+	const isContactSlide = currentSlide < 6;
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
