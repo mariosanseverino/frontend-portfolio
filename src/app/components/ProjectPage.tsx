@@ -27,7 +27,7 @@ export default function ProjectPage({ projectIndex }: ProjectPageProps) {
 
 	return (
 		<section
-			className='swiper-slide bg-black flex flex-col justify-center relative'
+			className='swiper-slide bg-black flex flex-col justify-center relative overflow-hidden'
 			id={`slide-${minProjectSlide + projectIndex}`}
 		>
 			<h2

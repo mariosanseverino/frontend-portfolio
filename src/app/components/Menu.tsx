@@ -8,7 +8,7 @@ export default function Menu() {
 
 	const handleMenuOption = (option: string, index: number) => {
 		if (option === 'contact') {
-			setCurrentSlide(5);
+			setCurrentSlide(6);
 			setMenu(false);
 		} else {
 			setCurrentSlide(index);

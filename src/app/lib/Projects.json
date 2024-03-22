@@ -1,5 +1,18 @@
 {
     "0": {
+      "title": "Boschi",
+      "logo": "images/logoboschi.png",
+      "logosmall": "images/logosmallboschi.png",
+      "background": "/videos/boschi.mp4",
+      "short": "Organic fabric T-shirt online store.",
+      "long": "Boschi is an e-commerce project for selling t-shirts made of 100% organic cotton. This is my first ever Full-stack project which I developed all by myself, including Database, Back-end, Front-end and brand identity.",
+      "role": "Full-stack developer.",
+      "setting": "Solo project.",
+      "duration": "8 months.",
+      "repository": "https://github.com/mariosanseverino/boschi",
+      "stack": ["Docker", "Node.js", "Express.js", "Prisma.js", "Jest.js", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript", "Cypress.js"]
+    },
+    "1": {
       "title": "Gamp",
       "logo": "images/logogamp.png",
       "logosmall": "images/logosmallgamp.png",
@@ -12,7 +25,7 @@
       "repository": "https://github.com/GAMP-GROUP/Recipe-APP-GAMP",
       "stack": ["Docker", "Prisma.db", "Next.js", "Tailwind CSS", "TypeScript", "JavaScript", "Cypress.js"]
     },
-    "1": {
+    "2": {
       "title": "TableRise",
       "logo": "images/logotablerise.png",
       "logosmall": "images/logosmalltablerise.png",
@@ -25,12 +38,12 @@
       "repository": "https://github.com/TableRise",
       "stack": ["Docker", "Node.js", "Mongo.db", "Redis", "JavaScript", "React.js", "Mocha.js", "Chai.js", "Sinon.js", "Jest.js", "HTML", "Tailwind CSS"]
     },
-    "2": {
+    "3": {
       "title": "Tattoo Library",
       "logo": "images/logotattoolibrary.png",
       "logosmall": "images/logosmalltattoolibrary.png",
       "background": "/videos/tattoolibrary.mp4",
-      "short": "Personal tattoo drawings library",
+      "short": "Drawings and tattoos portfolio",
       "long": "This project was my first attempt of creating a portfolio, which later I decided to turn into my showcase of tattoo drawings. I was always fascinated by medieval characters from RPG games, and those were important inspirational aspects of my drawings.",
       "role": "Front-end developer and illustrator.",
       "setting": "Solo project.",

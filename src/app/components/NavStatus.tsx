@@ -18,7 +18,7 @@ export default function NavStatus() {
 		<section			
 			className='w-full z-10 flex absolute top-0 left-1/2 -translate-x-1/2'
 		>
-			{ ['status-bar-1', 'status-bar-2', 'status-bar-3', 'status-bar-4', 'status-bar-5', 'status-bar-6'].map((id, index) => (
+			{ ['status-bar-1', 'status-bar-2', 'status-bar-3', 'status-bar-4', 'status-bar-5', 'status-bar-6', 'status-bar-7'].map((id, index) => (
 				<div
 					key={ index } id={ id } className={ statusCheck(index) }
 				/>
