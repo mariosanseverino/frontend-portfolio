@@ -25,8 +25,12 @@ export default function LoadingScreen() {
 	}, []);
 
 	return (
-		<section id='loading-screen' className='z-50 absolute top-0 left-0 w-screen h-screen bg-blue flex flex-col items-center justify-center gap-4'>
-			<img src='/icons/loading.svg' alt='Loading icon' className='animate-pulse' />
+		<section
+			id='loading-screen'
+			className={ `z-50 fixed opacity-20 top-16 right-8 w-screen h-screen bg-blue flex justify-end items-start
+			lg:right-16` }
+		>
+			<img src='/icons/loading.svg' alt='Loading icon' className='w-[1.75em]' />
 		</section>
 	);
 }
