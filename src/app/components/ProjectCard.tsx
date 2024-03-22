@@ -20,15 +20,15 @@ type ProjectsProps = {
 export default function ProjectCard({ index, title, logo, short, long, role, setting, duration, stack, deploy, repository }: ProjectsProps) {
 	const { currentSlide } = useBehaviorContext();
 	const [details, setDetails] = useState(false);
-	const isProject = currentSlide >= 2 && currentSlide < 5;
+	const isProject = currentSlide >= 2 && currentSlide < 6;
 	const isCurrentProject = currentSlide === index + 2;
 	const fromBottom = (index + 2) > currentSlide;
 
 	return (
 		<section
-			className='z-10 h-full relative'
+			className='z-10 h-full relative overflow-hidden'
 		>
-			<div className={ `w-full flex flex-col items-center gap-4 absolute top-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000
+			<div className={ `w-full flex flex-col items-center gap-8 absolute top-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000
 			${ isCurrentProject ? '-translate-y-1/2 opacity-100' : fromBottom ? '-translate-y-96 opacity-0' : 'translate-y-64 opacity-0' }`}>
 				<img
 					src={logo}

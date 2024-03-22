@@ -6,7 +6,7 @@ export default function HomePage() {
 
 	return (
 		<section
-			className='swiper-slide flex flex-col h-full justify-between bg-blue text-white gradient lg:relative'
+			className='swiper-slide flex flex-col h-full justify-between bg-blue text-white gradient overflow-hidden lg:relative'
 			id='slide-1'
 		>
 			<div className={ `lg:absolute lg:left-16 lg:top-16 transition-all duration-1000

@@ -8,7 +8,7 @@ export default function AboutPage() {
 	return (
 		<section
 			id='slide-2'
-			className={`swiper-slide bg-white text-black flex flex-col justify-between text-left
+			className={`swiper-slide bg-white text-black flex flex-col justify-between text-left overflow-hidden
 			lg:grid lg:grid-cols-3 lg:gap-x-[5rem]` }
 		>
 			<AboutMeSection />

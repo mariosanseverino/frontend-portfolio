@@ -9,12 +9,12 @@ import ProjectNavStatus from './components/ProjectNavStatus';
 import LoadingScreen from './components/LoadingScreen';
 
 export default function Home() {
-	const totalSlides = 6;
+	const totalSlides = 7;
 	const { currentSlide, setCurrentSlide, menu } = useBehaviorContext();
 	const [touchStart, setTouchStart] = useState<number | null>(null);
 	const [touchEnd, setTouchEnd] = useState<number | null>(null);
 	const minSwipeDistance = 50;
-	const isProject = currentSlide >= 2 && currentSlide < 5;
+	const isProject = currentSlide >= 2 && currentSlide < 6;
 	let isScrolling = false;
 
 	const handleWheel = useCallback(
