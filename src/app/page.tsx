@@ -3,8 +3,10 @@ import React, { useEffect, useCallback, useState } from 'react';
 import SwiperWrapper from './components/SwiperWrapper';
 import { useBehaviorContext } from './context/BehaviorContext';
 import Menu from './components/Menu';
+import NavBar from './components/NavBar';
 import NavStatus from './components/NavStatus';
 import ProjectNavStatus from './components/ProjectNavStatus';
+import LoadingScreen from './components/LoadingScreen';
 
 export default function Home() {
 	const totalSlides = 6;
@@ -92,7 +94,9 @@ export default function Home() {
 			onTouchMove={ onTouchMove }
 			onTouchEnd={ onTouchEnd }
 		>
+			<LoadingScreen />
 			<NavStatus />
+			<NavBar />
 			{ isProject && <ProjectNavStatus /> }
 			<SwiperWrapper
 				currentSlide={ currentSlide }

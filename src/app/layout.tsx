@@ -2,7 +2,6 @@ import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Archivo } from 'next/font/google';
 import BehaviorProvider from './context/BehaviorContext';
-import NavBar from './components/NavBar';
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -27,8 +26,7 @@ export default function RootLayout({
 			<Analytics />
 			<BehaviorProvider>
 				<body className={`w-full flex flex-col ${ archivo.className }`}>
-					<NavBar />
-					{children}
+					{ children }
 				</body>
 			</BehaviorProvider>
 		</html>
