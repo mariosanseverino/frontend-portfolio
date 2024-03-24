@@ -34,9 +34,9 @@ export default function AboutMeSection() {
 						))}
 					</div>
 					<p className='leading-[1.17rem]'>
-                    I specialize in creating user-friendly UIs using UX-design techniques combined with coding. 
-                    I have also explored Back-end technologies like NodeJS, Express.js and MySQL using layered architecture.
-                    Not only, I have worked with unit and integration automated tests with libraries like RTL, Cypress, Jest, Ṕytest and xUnit.
+                    I specialize in creating user-friendly UIs using UX-design techniques combined with coding.
+                    I have also explored Database and Back-end technologies like NodeJS, Express, Prisma, Postgres and MySQL, using layered architecture.
+                    Not only, I am experienced with unit and integration tests with libraries like RTL, Cypress, Jest and Pytest.
 					</p>
 				</div>
 			</div>
