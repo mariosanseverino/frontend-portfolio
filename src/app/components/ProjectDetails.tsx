@@ -34,7 +34,7 @@ export default function ProjectDetails({ title, card, setCard, long, role, setti
 	return (
 		<section
 			id={`projectcard-${title.toLowerCase()}`}
-			className={`absolute top-0 left-1/2 -translate-x-1/2 bg-white text-black w-screen h-full py-[3rem] px-[2.3rem] rounded-t-3xl flex flex-col justify-between transition duration-500
+			className={`absolute top-0 left-1/2 -translate-x-1/2 bg-white text-black w-screen h-full py-[2rem] px-[2.3rem] rounded-t-[3em] flex flex-col justify-between transition duration-500
 			${card ? 'translate-y-[4rem] lg:translate-y-[4rem]' : 'translate-y-full opacity-0'}
 			lg:w-[32rem]`}
 		>
@@ -49,7 +49,7 @@ export default function ProjectDetails({ title, card, setCard, long, role, setti
 				<div className='flex flex-wrap gap-1'>
 					{stackTags}
 				</div>
-				<button className='absolute -top-4 -right-2' onClick={() => setCard(false)}>
+				<button className='absolute top-1 right-0' onClick={() => setCard(false)}>
 					<img src='/icons/close.png' alt="" />
 				</button>
 			</div>
