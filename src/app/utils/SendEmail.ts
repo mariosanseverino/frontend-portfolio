@@ -17,9 +17,9 @@ export async function sendEmail({ firstName, lastName, email, subject, message }
 		to: 'marioaugusto.sanseverino@gmail.com',
 		subject,
 		html: `First name: ${firstName}
-		Last Name: ${lastName}
-		Email: ${email}
-		Subject: ${subject}
-		Message: ${message}`
+			Last Name: ${lastName}
+			Email: ${email}
+			Subject: ${subject}
+			Message: ${message}`
 	});
 }

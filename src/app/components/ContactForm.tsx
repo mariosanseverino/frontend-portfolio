@@ -25,9 +25,7 @@ export default function ContactForm() {
 		event.preventDefault();
 
 		if (Object.values(formData).every((field) => field.length > 0)) {
-            
 			await sendEmail(formData);
-
 			setFormData({
 				firstName: '',
 				lastName: '',
@@ -35,7 +33,6 @@ export default function ContactForm() {
 				subject: '',
 				message: ''
 			});
-    
 			window.alert('Email sent successfully');
 		} else {
 			window.alert('Fill all fields correctly');
