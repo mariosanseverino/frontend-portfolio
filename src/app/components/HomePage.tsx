@@ -21,7 +21,7 @@ export default function HomePage() {
 				${ currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-2/4 opacity-0' }` }
 			>
 				<img
-					src='/images/profilepic.jpeg'
+					src='/images/profilepic.jpg'
 					id='profile-picture'
 					alt='Mario&apos;s profile picture'
 					className='w-48 rounded-3xl shadow-md transition-transform duration-300 cursor-pointer hover:scale-105 lg:hover:-rotate-1'
